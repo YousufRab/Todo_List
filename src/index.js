@@ -1,4 +1,9 @@
 import './style.css';
+import {pageContent} from './pageContent';
+
+const homeContent = document.querySelector('#homeContent');
+homeContent.append(pageContent());
+
 
 // Todo object
 
