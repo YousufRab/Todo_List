@@ -1,0 +1,28 @@
+body {
+    background-image: url(./pexels-pixabay-301717.jpg);
+}
+
+#container {
+    height: 80vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    width: 85vw;
+    margin-left: 7.5vw;
+    margin-right: 7.5vw;
+    background-color: rgb(255, 249, 242);
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 4fr;
+}
+
+#header {
+    grid-column: 1/-1;
+}
+
+#sideBar {
+    background-color: aquamarine;
+}
+
+#content {
+    background-color: rgb(192, 196, 0);
+}
