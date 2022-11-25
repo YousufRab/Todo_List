@@ -12,7 +12,7 @@ body {
     background-color: rgb(255, 249, 242);
     display: grid;
     grid-template-rows: 1fr 5fr;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1.5fr 4fr;
 }
 
 .sideBarLinks {
@@ -20,8 +20,14 @@ body {
     list-style-type: none;
     background-image: url(./list-circle-outline.svg);
     background-repeat: no-repeat;
+    background-size: 18px;
     padding-left: 1.5rem;
     margin-left: 10px;
+}
+
+.proList {
+    padding-left: 10px;
+    margin-top: 8px;
 }
 
 #header {
@@ -35,3 +41,4 @@ body {
 #content {
     background-color: rgb(192, 196, 0);
 }
+
