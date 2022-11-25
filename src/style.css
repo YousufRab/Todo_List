@@ -15,6 +15,18 @@ body {
     grid-template-columns: 1fr 4fr;
 }
 
+li {
+    list-style-type: none;
+    background-image: url(./list-circle-outline.svg);
+    background-repeat: no-repeat;
+    padding-left: 1.5rem;
+    margin-left: 10px;
+}
+
+.sideBarLinks {
+    margin-top: 12px;
+}
+
 #header {
     grid-column: 1/-1;
 }
