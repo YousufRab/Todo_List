@@ -17,23 +17,43 @@ export function pageContent() {
 
     // Create sidebar links
 
-    const homeLink = document.createElement('p');
+    const homeLink = document.createElement('li');
     homeLink.classList.add('sideBarLinks');
     homeLink.innerHTML = 'Home';
 
-    const todayLink = document.createElement('p');
+    const todayLink = document.createElement('li');
     todayLink.classList.add('sideBarLinks');
     todayLink.innerHTML = 'Today';
 
-    const weekLink = document.createElement('p');
+    const weekLink = document.createElement('li');
     weekLink.classList.add('sideBarLinks');
     weekLink.innerHTML = 'This week';
 
-    const projectLink = document.createElement('p');
+    const projectLink = document.createElement('ul');
     projectLink.classList.add('sideBarLinks');
     projectLink.innerHTML = 'Projects:';
+    projectLink.id = 'dataList';
+
 
     sideBar.append(homeLink, todayLink, weekLink, projectLink);
 
     return container;
 }
+
+export const projects = (() => {
+
+    function render() {
+        let projectList = ['eat', 'food', 'errday'];
+        let listContainer = document.querySelector('#dataList');
+
+        projectList.forEach(list => {
+            const listElement = document.createElement('li');
+            console.log('list element created');
+            listElement.classList.add('proList');
+            listElement.innerText = list;
+            listContainer.appendChild(listElement);
+        })
+    }
+
+    return {render};
+})();
