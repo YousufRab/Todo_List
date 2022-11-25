@@ -42,8 +42,9 @@ export function pageContent() {
 
 export const projects = (() => {
 
+    let projectList = ['eat', 'pray', 'love'];
+
     function render() {
-        let projectList = ['eat', 'food', 'errday'];
         let listContainer = document.querySelector('#dataList');
 
         projectList.forEach(list => {
@@ -55,5 +56,9 @@ export const projects = (() => {
         })
     }
 
-    return {render};
+    function addToProList (task) {
+        projectList.push(task);
+    }
+
+    return {render, addToProList};
 })();
