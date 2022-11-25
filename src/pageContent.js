@@ -34,8 +34,12 @@ export function pageContent() {
     projectLink.innerHTML = 'Projects:';
     projectLink.id = 'dataList';
 
+    const newProject = document.createElement('div');
+    newProject.id = 'newProjectBtn';
+    newProject.innerHTML = '+';
 
-    sideBar.append(homeLink, todayLink, weekLink, projectLink);
+
+    sideBar.append(homeLink, todayLink, weekLink, projectLink, newProject);
 
     return container;
 }
