@@ -1,5 +1,6 @@
+import { de } from "date-fns/locale";
 
-const mainContent = () => {
+export const mainContent = (() => {
     
     function createToDoCard (todo) {
 
@@ -10,12 +11,19 @@ const mainContent = () => {
         const mainInfo = document.createElement('div');
         mainInfo.classList.add('mainInfo');
      
-
         todoCard.append(mainInfo);
+
+        const completed = document.createElement('input');
+        completed.setAttribute('type', 'checkbox');
+        completed.checked = todo.completed;
         
         const title = document.createElement('div');
         title.classList.add('todoTitle');
         title.innerHTML = todo.title;
+
+        const details = document.createElement('div');
+        details.classList.add('detailsBtn');
+        details.innerHTML = 'Details';
 
         const description = document.createElement('p');
         description.classList.add('todo-Description');
@@ -23,15 +31,26 @@ const mainContent = () => {
 
         const dueDate = document.createElement('div');
         dueDate.classList.add('todoDate');
+        dueDate.innerHTML = "Temporary date"
         //dueDate.innerHTML = dateToString(todo.dueDate);
-    
+
+        mainInfo.append(completed, title, details, dueDate);
+        
+        return todoCard;
     }
 
     function prioLevel (todo) {
-        
+        if (todo.priority == 'low') {
+            return 'rgb(160, 253, 21)';
+        } else if (todo.priority == 'medium') {
+            return 'rgb(255, 255, 0)';
+        } else {
+            return 'rgb(255, 0, 0)';
+        }
     }
 
-}
+    return {createToDoCard}
+})();
 
 
 //Radio button selected depends on todo.priority choice, need a fxn to convert
