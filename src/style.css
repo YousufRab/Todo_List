@@ -20,7 +20,7 @@ body {
     list-style-type: none;
     background-image: url(./list-circle-outline.svg);
     background-repeat: no-repeat;
-    background-size: 18px;
+    background-size: 20px;
     padding-left: 1.5rem;
     margin-left: 10px;
 }
@@ -46,4 +46,22 @@ body {
 #content {
     background-color: rgb(192, 196, 0);
 }
+
+.mainInfo {
+    background-color: rgb(226, 226, 226);
+    color: rgb(255, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.todoCard {
+
+    padding-left: 8px;
+
+    padding-right: 8px;
+}
+
 
