@@ -22,6 +22,17 @@ class Todo {
 
 }
 
+//Experimental todo
+let todo1 = new Todo("Eat", "Stuff your face", "8th Dec", "medium");
+
+
+
+
+
+
+
+
+
 // watch these vids:
 // https://www.youtube.com/watch?v=W7FaYfuwu70&ab_channel=WebDevSimplified
 // https://www.youtube.com/watch?v=WgFkdGqC6ng&ab_channel=MiladTech
