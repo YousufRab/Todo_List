@@ -18,8 +18,16 @@ const mainContent = () => {
         dueDate.classList.add('todoDate');
         //dueDate.innerHTML = dateToString(todo.dueDate);
     
-        const priority = document.createElement('input');
-        priority.setAttribute('type', 'radio');
+        const lowPriority = document.createElement('input');
+        lowPriority.setAttribute('type', 'radio');
+        lowPriority.setAttribute('name', 'priority');
+        lowPriority.id = 'lowPrio';
+        lowPriority.classList.add('prioBtn');
 
+        const medPriority = document.createElement('input');
+        medPriority.setAttribute('type', 'radio');
+        medPriority.setAttribute('name', 'priority');
+        medPriority.id = 'medPrio';
+        medPriority.classList.add('prioBtn');
     }
 }
