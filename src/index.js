@@ -1,5 +1,6 @@
 import './style.css';
 import {pageContent, projects} from './pageContent';
+import {mainContent} from './mainContent';
 
 const homeContent = document.querySelector('#homeContent');
 homeContent.append(pageContent());
@@ -23,8 +24,9 @@ class Todo {
 }
 
 //Experimental todo
-let todo1 = new Todo("Eat", "Stuff your face", "8th Dec", "medium");
-
+let todo1 = new Todo("Eat", "Stuff your face", "8th Dec", "medium", true);
+let mainContentSection = document.querySelector('#content');
+mainContentSection.append(mainContent.createToDoCard(todo1));
 
 
 
