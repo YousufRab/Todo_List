@@ -13,5 +13,34 @@ const createTodo = () => {
         }
     }
 
+    function todoForm() {
+
+        const inputContainer = document.createElement('div');
+        inputContainer.classList.add('inputContainer');
+
+        const inputHeader = document.createElement('div');
+        inputHeader.classList.add('inputHeader');
+
+        const inputTitle = document.createElement('p');
+        inputTitle.classList.add('inputTitle');
+        inputTitle.innerHTML = "Create new...";
+        const closeInput = document.createElement('div');
+        closeInput.classList.add('closeInput');
+        closeInput.innerHTML = "X";
+
+        inputHeader.append(inputTitle, closeInput); //append this to inputContainer
+
+        const inputSidebar = document.createElement('div');
+        inputSidebar.classList.add('inputSide');
+        const sideTodo = document.createElement('div');
+        sideTodo.classList.add('sideTodo');
+        const sideProject = document.createElement('div');
+        sideProject.classList.add('sideProject');
+
+        inputSidebar.append(sideTodo, sideProject); // append this to inputContainer
+
+        
+    }
+
     
 }
