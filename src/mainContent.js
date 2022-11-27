@@ -1,4 +1,6 @@
 import { de } from "date-fns/locale";
+import editSVG from './edit.svg';
+import deleteSVG from './deleteIcon.svg';
 
 export const mainContent = (() => {
     
@@ -34,7 +36,20 @@ export const mainContent = (() => {
         dueDate.innerHTML = "Temporary date"
         //dueDate.innerHTML = dateToString(todo.dueDate);
 
-        mainInfo.append(completed, title, details, dueDate);
+        const editDiv = document.createElement('div');
+        editDiv.classList.add('editBtn');
+        const editBtnImg = new Image();
+        editBtnImg.src = editSVG;
+        editDiv.append(editBtnImg);
+
+        const deleteDiv = document.createElement('div');
+        deleteDiv.classList.add('deleteBtn');
+        const deleteBtnImg = new Image();
+        deleteBtnImg.src = deleteSVG;
+        deleteDiv.append(deleteBtnImg);
+
+
+        mainInfo.append(completed, title, details, dueDate, editDiv, deleteDiv);
         
         return todoCard;
     }
