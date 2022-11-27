@@ -4,15 +4,19 @@ body {
 
 #container {
     height: 80vh;
+    min-height: 747px;
+    min-width: 850px;
+    max-width: 1270px;
+    max-height: 760px;
     margin-top: 10vh;
     margin-bottom: 10vh;
     width: 85vw;
-    margin-left: 7.5vw;
-    margin-right: 7.5vw;
+    margin-left: auto;
+    margin-right: auto;
     background-color: rgb(255, 249, 242);
     display: grid;
     grid-template-rows: 1fr 5fr;
-    grid-template-columns: 1.5fr 4fr;
+    grid-template-columns: 1.2fr 4fr;
 }
 
 .sideBarLinks {
@@ -55,8 +59,6 @@ body {
     align-items: center;
 }
 
-
-
 .todoCard {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -64,4 +66,7 @@ body {
     padding-right: 8px;
 }
 
+.deleteBtn {
+    width: 36px;
+}
 
