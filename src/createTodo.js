@@ -39,7 +39,13 @@ const createTodo = () => {
 
         inputSidebar.append(sideTodo, sideProject); // append this to inputContainer
 
-        
+        // Create fieldset with separate divs for each input section
+        const formContainer = document.createElement('div');
+        formContainer.classList.add('formContainer');
+        const fieldset = document.createElement('fieldset');
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('titleDiv');
+
     }
 
     
