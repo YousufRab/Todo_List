@@ -83,3 +83,34 @@ body {
     width: 36px;
 }
 
+.inputContainer {
+    background-color: azure;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.inputHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   grid-column: 1/3;
+   grid-row: 1/2; 
+}
+
+.inputSide {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+
+
+
