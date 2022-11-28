@@ -139,7 +139,7 @@ export const createTodo = (() => {
         let newDescription = document.getElementById('todoDescription').value;
         let newDate = document.getElementById('todoDate').value;
 
-        let newPriority = () => {
+        function priofunction () {
             if (document.getElementById('lowPrio').checked) {
                 return 'low';
             } else if (document.getElementById('medPrio').checked) {
@@ -149,8 +149,10 @@ export const createTodo = (() => {
             }
         }
 
+        let newPriority = priofunction();
         let newCompleted = false;    // this is not collected from form but assumed
-        return newTitle, newDescription, newDate, newPriority(), newCompleted
+
+        return {newTitle, newDescription, newDate, newPriority, newCompleted}
     }
 
     function clearForm() {
