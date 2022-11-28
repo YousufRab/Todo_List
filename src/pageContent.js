@@ -62,6 +62,7 @@ export const projects = (() => {
 
     function addToProList (task) {
         projectList.push(task);
+        //in future we will code this to receive todo object title
     }
 
     return {render, addToProList};
