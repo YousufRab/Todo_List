@@ -43,8 +43,18 @@ const createTodo = () => {
         const formContainer = document.createElement('div');
         formContainer.classList.add('formContainer');
         const fieldset = document.createElement('fieldset');
+
         const titleDiv = document.createElement('div');
         titleDiv.classList.add('titleDiv');
+        const titleInput = document.createElement('input');
+        titleInput.setAttribute('type', 'text');
+        titleInput.required = true;
+        titleInput.id = 'todoTitle';
+        const titleLabel = document.createElement('label');
+        titleLabel.classList.add('titleLabel');
+        titleLabel.innerHTML = 'Title: ';
+        titleLabel.setAttribute('for', 'todoTitle');
+
 
     }
 
