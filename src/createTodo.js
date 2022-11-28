@@ -1,4 +1,5 @@
-import { daysInWeek, daysToWeeks } from "date-fns";
+import { daysInWeek, daysToWeeks, isDate } from "date-fns";
+import getDate from "date-fns/getDate";
 import { da } from "date-fns/locale";
 
 
@@ -129,6 +130,14 @@ export const createTodo = (() => {
 
         return inputContainer;
 
+    }
+
+    function collectFormInput() {
+        
+        let title = document.getElementById('todoTitle').value;
+        let description = document.getElementById('todoDescription').value;
+        let date = document.getElementById('todoDate').value;
+        
     }
 
     return {todoForm}
