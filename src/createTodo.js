@@ -134,11 +134,23 @@ export const createTodo = (() => {
 
     function collectFormInput() {
         
-        let title = document.getElementById('todoTitle').value;
-        let description = document.getElementById('todoDescription').value;
-        let date = document.getElementById('todoDate').value;
-        
+        let newTitle = document.getElementById('todoTitle').value;
+        let newDescription = document.getElementById('todoDescription').value;
+        let newDate = document.getElementById('todoDate').value;
+
+        let newPriority = () => {
+            if (document.getElementById('lowPrio').checked) {
+                return 'low';
+            } else if (document.getElementById('medPrio').checked) {
+                return 'medium';
+            } else {
+                return 'high';
+            }
+        }
+
+        let newCompleted = false;    // this is not collected from form but assumed
+        return newTitle, newDescription, newDate, newPriority(), newCompleted
     }
 
-    return {todoForm}
+    return {todoForm, collectFormInput};
 })();
