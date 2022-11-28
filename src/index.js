@@ -1,8 +1,12 @@
 import './style.css';
 import {pageContent, projects} from './pageContent';
 import {mainContent} from './mainContent';
+import { createTodo } from './createTodo';
 
 const homeContent = document.querySelector('#homeContent');
+//temporarily add input form to Dom
+homeContent.append(createTodo.todoForm());
+
 homeContent.append(pageContent());
 
 projects.addToProList('King shit');
@@ -20,7 +24,6 @@ class Todo {
         this.priority = priority;
         this.completed = completed;
     }
-
 }
 
 //Experimental todo
