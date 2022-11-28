@@ -1,3 +1,5 @@
+import { daysInWeek, daysToWeeks } from "date-fns";
+import { da } from "date-fns/locale";
 
 
 export const createTodo = (() => {
@@ -53,7 +55,7 @@ export const createTodo = (() => {
         titleInput.required = true;
         titleInput.id = 'todoTitle';
         const titleLabel = document.createElement('label');
-        titleLabel.classList.add('titleLabel');
+        titleLabel.classList.add('formLabel');
         titleLabel.innerHTML = 'Title: ';
         titleLabel.setAttribute('for', 'todoTitle');
         titleDiv.append(titleLabel, titleInput);
@@ -64,7 +66,7 @@ export const createTodo = (() => {
         descInput.setAttribute('type', 'text');
         descInput.id = 'todoDescription';
         const descLabel = document.createElement('label');
-        descLabel.classList.add('descLabel');
+        descLabel.classList.add('formLabel');
         descLabel.innerHTML = 'Description: ';
         descLabel.setAttribute('for', 'todoDescription');
         descDiv.append(descLabel, descInput);
@@ -75,13 +77,55 @@ export const createTodo = (() => {
         dateInput.setAttribute('type', 'date');
         dateInput.id = 'todoDate';
         const dateLabel = document.createElement('label');
-        dateLabel.classList.add('dateLabel');
-        dateLabel.innerHTML = 'Date due';
+        dateLabel.classList.add('formLabel');
+        dateLabel.innerHTML = 'Date due: ';
         dateLabel.setAttribute('for', 'todoDate');
         dateDiv.append(dateLabel, dateInput);
 
+        const prioDiv = document.createElement('div');
+        prioDiv.classList.add('prioDiv');
+        const prioTitle = document.createElement('p');
+        prioTitle.innerHTML = 'Priority: ';
+
+        const prioBtnDiv = document.createElement('div');
+        prioBtnDiv.id = 'prioBtnContainer';
+
+        const lowPriority = document.createElement('input');
+        lowPriority.setAttribute('type', 'radio');
+        lowPriority.setAttribute('name', 'priority');
+        lowPriority.id = 'lowPrio';
+        lowPriority.classList.add('prioBtn');
+        const lowLabel = document.createElement('label');
+        lowLabel.setAttribute('for', 'lowPrio');
+        lowLabel.innerHTML = 'Low';
+
+        const medPriority = document.createElement('input');
+        medPriority.setAttribute('type', 'radio');
+        medPriority.setAttribute('name', 'priority');
+        medPriority.id = 'medPrio';
+        medPriority.classList.add('prioBtn');
+        const medLabel = document.createElement('label');
+        medLabel.setAttribute('for', 'medPrio');
+        medLabel.innerHTML = 'Medium';
+
+        const highPriority = document.createElement('input');
+        highPriority.setAttribute('type', 'radio');
+        highPriority.setAttribute('name', 'priority');
+        highPriority.id = 'highPrio';
+        highPriority.classList.add('prioBtn');
+        const highLabel = document.createElement('label');
+        highLabel.setAttribute('for', 'highPrio');
+        highLabel.innerHTML = 'High';
+
+        const addTodoBtn = document.createElement('div');
+        addTodoBtn.innerHTML = 'Add todo';
+        addTodoBtn.id = 'addTodoBtn';
+        
+        prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
+        prioDiv.append(prioTitle, prioBtnDiv);
+
         fieldset.append(titleDiv, descDiv, dateDiv);
-        inputContainer.append(inputHeader, inputSidebar, fieldset);
+        inputContainer.append(inputHeader, inputSidebar, fieldset, prioDiv);
 
         return inputContainer;
 
