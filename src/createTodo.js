@@ -121,6 +121,7 @@ export const createTodo = (() => {
         const addTodoBtn = document.createElement('div');
         addTodoBtn.innerHTML = 'Add todo';
         addTodoBtn.id = 'addTodoBtn';
+        addTodoBtn.addEventListener('click', addTodoBtnClicked);
         
         prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
         prioDiv.append(prioTitle, prioBtnDiv);
@@ -150,6 +151,21 @@ export const createTodo = (() => {
 
         let newCompleted = false;    // this is not collected from form but assumed
         return newTitle, newDescription, newDate, newPriority(), newCompleted
+    }
+
+    function clearForm() {
+        document.getElementById('todoTitle').value = "";
+        document.getElementById('todoDescription').value = "";
+        document.getElementById('todoDate').value = "";
+        document.getElementById('lowPrio').checked = false;
+        document.getElementById('medPrio').checked = false;
+        document.getElementById('highPrio').checked = false;
+    }
+
+    function addTodoBtnClicked() {
+        collectFormInput();
+        console.log(collectFormInput()); // this is just for testing purposes
+        clearForm();
     }
 
     return {todoForm, collectFormInput};
