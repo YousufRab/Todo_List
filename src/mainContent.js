@@ -56,7 +56,7 @@ export const mainContent = (() => {
 
     function prioLevel (todo) {
         if (todo.priority == 'low') {
-            return 'rgb(160, 253, 21)';
+            return 'rgb(0, 231, 39)';
         } else if (todo.priority == 'medium') {
             return 'rgb(255, 255, 0)';
         } else {
