@@ -171,6 +171,8 @@ export const createTodo = (() => {
     function addTodoBtnClicked() {
         collectFormInput();
         console.log(createTodoObject()); // this is just for testing purposes
+        const myTodo = createTodoObject();
+        displayTodo(myTodo);
         clearForm();
     }
 
@@ -178,6 +180,11 @@ export const createTodo = (() => {
         // Invoke todo class constructor and return created object
         const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false);
         return todoObject;
+    }
+
+    function displayTodo (todoObject) {
+        let mainContentSection = document.querySelector('#content');
+        mainContentSection.append(mainContent.createToDoCard(todoObject));
     }
 
     return {todoForm, collectFormInput};
