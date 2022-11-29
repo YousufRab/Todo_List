@@ -1,6 +1,7 @@
 import { daysInWeek, daysToWeeks, isDate } from "date-fns";
 import getDate from "date-fns/getDate";
 import { da } from "date-fns/locale";
+import { mainContent } from "./mainContent";
 
 
 export const createTodo = (() => {
@@ -95,6 +96,7 @@ export const createTodo = (() => {
         lowPriority.setAttribute('type', 'radio');
         lowPriority.setAttribute('name', 'priority');
         lowPriority.id = 'lowPrio';
+        lowPriority.checked = true;
         lowPriority.classList.add('prioBtn');
         const lowLabel = document.createElement('label');
         lowLabel.setAttribute('for', 'lowPrio');
@@ -168,7 +170,7 @@ export const createTodo = (() => {
 
     function addTodoBtnClicked() {
         collectFormInput();
-        console.log(collectFormInput()); // this is just for testing purposes
+        console.log(collectFormInput().newTitle); // this is just for testing purposes
         clearForm();
     }
 
