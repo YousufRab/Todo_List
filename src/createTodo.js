@@ -144,15 +144,17 @@ export const createTodo = (() => {
                 return 'low';
             } else if (document.getElementById('medPrio').checked) {
                 return 'medium';
-            } else {
+            } else if (document.getElementById('highPrio').checked) {
                 return 'high';
+            } else {
+                return '';
             }
         }
 
         let newPriority = priofunction();
         let newCompleted = false;    // this is not collected from form but assumed
 
-        return {newTitle, newDescription, newDate, newPriority, newCompleted}
+        return {newTitle, newDescription, newDate, newPriority, newCompleted} // these values will be converted to a todo class object using contructor
     }
 
     function clearForm() {
