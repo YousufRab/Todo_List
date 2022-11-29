@@ -33,8 +33,7 @@ export const mainContent = (() => {
 
         const dueDate = document.createElement('div');
         dueDate.classList.add('todoDate');
-        dueDate.innerHTML = "Temporary date"
-        //dueDate.innerHTML = dateToString(todo.dueDate);
+        dueDate.innerHTML = dateToString(todo);
 
         const editDiv = document.createElement('div');
         editDiv.classList.add('editBtn');
@@ -62,6 +61,13 @@ export const mainContent = (() => {
         } else {
             return 'rgb(255, 0, 0)';
         }
+    }
+
+    function dateToString(todo) {
+        const month = (todo.date)
+        console.log(month);
+        
+        return month;
     }
 
     return {createToDoCard}
