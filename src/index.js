@@ -27,7 +27,7 @@ class Todo {
 }
 
 //Experimental todo
-let todo1 = new Todo("Eat", "Stuff your face", "8th Dec", "medium", true);
+let todo1 = new Todo("Eat", "Stuff your face", "2022-11-24", "medium", true);
 let mainContentSection = document.querySelector('#content');
 mainContentSection.append(mainContent.createToDoCard(todo1));
 
