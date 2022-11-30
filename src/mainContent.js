@@ -72,18 +72,23 @@ export const mainContent = (() => {
         let month = (todo.date).slice(5,7);
         
         console.log("month is: " + month);
-        console.log("Day is: " + day);
+        console.log(day);
+        console.log(day.length)
 
         let monthName = "";
         let daySuffix = "";
         switch (day){
-            case ('1' || '21' || '31'):
+            case ('1'):
+            case ('21'):
+            case ('31'):
                 daySuffix = "st";
                 break;
-            case ('2' || '22'):
+            case ('2'):
+            case ('22'):
                 daySuffix = "nd";
                 break;
-            case ('3' || '23'):
+            case ('3'):
+            case ('23'):
                 daySuffix = "rd";
                 break;
             default:
