@@ -170,8 +170,9 @@ export const createTodo = (() => {
 
     function addTodoBtnClicked() {
         collectFormInput();
-        console.log(createTodoObject()); // this is just for testing purposes
+
         const myTodo = createTodoObject();
+        console.log(myTodo); // this is just for testing purposes
         displayTodo(myTodo);
         clearForm();
     }
