@@ -64,10 +64,74 @@ export const mainContent = (() => {
     }
 
     function dateToString(todo) {
-        const month = (todo.date)
-        console.log(month);
+        console.log(todo.date);
+        let day = (todo.date).slice(8);
+        if (day[0] == "0") {
+            day = day.slice(1);
+        }
+        let month = (todo.date).slice(5,7);
         
-        return month;
+        console.log("month is: " + month);
+        console.log("Day is: " + day);
+
+        let monthName = "";
+        let daySuffix = "";
+        switch (day){
+            case ('1' || '21' || '31'):
+                daySuffix = "st";
+                break;
+            case ('2' || '22'):
+                daySuffix = "nd";
+                break;
+            case ('3' || '23'):
+                daySuffix = "rd";
+                break;
+            default:
+                daySuffix = "th";
+                break;
+        }
+
+        switch(month) {
+            case ('1'):
+                monthName = "January";
+                break;
+            case ('2'):
+                monthName = "Febuary";
+                break;
+            case ('3'):
+                monthName = "March";
+                break;
+            case ('4'):
+                monthName = "April";
+                break;
+            case ('5'):
+                monthName = "May";
+                break;
+            case ('6'):
+                monthName = "June";
+                break;
+            case ('7'):
+                monthName = "July";
+                break;
+            case ('8'):
+                monthName = "August";
+                break;
+            case ('9'):
+                monthName = "September";
+                break;
+            case ('10'):
+                monthName = "October";
+                break;
+            case ('11'):
+                monthName = "November";
+                break;
+            case ('12'):
+                monthName = "December";
+                break;
+        }
+        let newFormatDate =  day+daySuffix + " " + monthName;
+        
+        return newFormatDate;
     }
 
     return {createToDoCard}
