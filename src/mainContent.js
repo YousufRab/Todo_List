@@ -97,31 +97,31 @@ export const mainContent = (() => {
         }
 
         switch(month) {
-            case ('1'):
+            case ('01'):
                 monthName = "January";
                 break;
-            case ('2'):
+            case ('02'):
                 monthName = "Febuary";
                 break;
-            case ('3'):
+            case ('03'):
                 monthName = "March";
                 break;
-            case ('4'):
+            case ('04'):
                 monthName = "April";
                 break;
-            case ('5'):
+            case ('05'):
                 monthName = "May";
                 break;
-            case ('6'):
+            case ('06'):
                 monthName = "June";
                 break;
-            case ('7'):
+            case ('07'):
                 monthName = "July";
                 break;
-            case ('8'):
+            case ('08'):
                 monthName = "August";
                 break;
-            case ('9'):
+            case ('09'):
                 monthName = "September";
                 break;
             case ('10'):
