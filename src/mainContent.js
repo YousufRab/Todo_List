@@ -64,7 +64,6 @@ export const mainContent = (() => {
     }
 
     function dateToString(todo) {
-        console.log(todo.date);
         let day = (todo.date).slice(8);
         if (day[0] == "0") {
             day = day.slice(1);
