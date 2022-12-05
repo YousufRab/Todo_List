@@ -46,7 +46,17 @@ export function pageContent() {
 
 export const projects = (() => {
 
+    class Project {
+
+        constructor(name, id) {
+            this.name = name;
+            this.id = id;
+        }
+    }
     let projectList = ['eat', 'pray', 'love'];
+    let projectNum = 1;
+
+    function createProject()
 
     function render() {
         let listContainer = document.querySelector('#dataList');
@@ -60,8 +70,8 @@ export const projects = (() => {
         })
     }
 
-    function addToProList (task) {
-        projectList.push(task);
+    function addToProList (project) {
+        projectList.push(project);
         //in future we will code this to receive todo object title
     }
 
