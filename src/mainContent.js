@@ -70,10 +70,6 @@ export const mainContent = (() => {
         }
         let month = (todo.date).slice(5,7);
         
-        console.log("month is: " + month);
-        console.log(day);
-        console.log(day.length)
-
         let monthName = "";
         let daySuffix = "";
         switch (day){
