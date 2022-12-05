@@ -17,6 +17,8 @@ export const createTodo = (() => {
         }
     }
 
+    let todoList = []; // array to hold all created todos
+
     function todoForm() {
 
         const inputContainer = document.createElement('div');
