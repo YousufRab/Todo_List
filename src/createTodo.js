@@ -8,16 +8,20 @@ export const createTodo = (() => {
 
     class Todo {
 
-        constructor(title, description, dueDate, priority, completed) {
+        constructor(title, description, dueDate, priority, completed, id, project) {
             this.title = title;
             this.description = description;
             this.date = dueDate;
             this.priority = priority;
             this.completed = completed;
+            this.id = id;
+            this.project = project;
+
         }
     }
 
     let todoList = []; // array to hold all created todos
+    let todoNum = 1; // todo Id number that will be incremented by +1 each time new todoObject is added
 
     function todoForm() {
 
@@ -173,13 +177,17 @@ export const createTodo = (() => {
     function addTodoBtnClicked() {
         const myTodo = createTodoObject();
         console.log(myTodo); // this is just for testing purposes
+        console.log(todoNum);
+        console.table(todoList);
         displayTodo(myTodo);
         clearForm();
     }
 
     function createTodoObject () {
         // Invoke todo class constructor and return created object
-        const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false);
+        const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false, todoNum);
+        todoNum++;
+        todoList.push(todoObject);
         return todoObject;
     }
 
