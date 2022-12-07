@@ -192,7 +192,7 @@ export const createTodo = (() => {
     }
 
     function displayTodo (todoObject) {
-        let mainContentSection = document.querySelector('#content');
+        let mainContentSection = document.querySelector('#upperContent');
         mainContentSection.append(mainContent.createToDoCard(todoObject));
     }
 
