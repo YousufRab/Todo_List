@@ -48,15 +48,19 @@ export const projects = (() => {
 
     class Project {
 
-        constructor(name, id) {
-            this.name = name;
+        constructor(title, id) {
+            this.title = title;
             this.id = id;
         }
     }
     let projectList = ['eat', 'pray', 'love'];
     let projectNum = 1;
 
-    function createProject()
+    function createProject(projectName) {
+        const myProject = new Project(projectName, projectNum);
+        projectNum++;
+        return myProject;
+    }
 
     function render() {
         let listContainer = document.querySelector('#dataList');
@@ -71,8 +75,7 @@ export const projects = (() => {
     }
 
     function addToProList (project) {
-        projectList.push(project);
-        //in future we will code this to receive todo object title
+        projectList.push(project.title);
     }
 
     return {render, addToProList};
