@@ -69,14 +69,14 @@ export const projects = (() => {
             const listElement = document.createElement('li');
             console.log('list element created');
             listElement.classList.add('proList');
-            listElement.innerText = list;
+            listElement.innerText = list.title;
             listContainer.appendChild(listElement);
         })
     }
 
     function addToProList (project) {
-        projectList.push(project.title);
+        projectList.push(project);
     }
 
-    return {render, addToProList};
+    return {render, addToProList, createProject};
 })();
