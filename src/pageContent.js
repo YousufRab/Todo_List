@@ -1,3 +1,5 @@
+import { add } from "date-fns";
+
 export function pageContent() {
 
     const container = document.createElement('div');
@@ -11,7 +13,20 @@ export function pageContent() {
     sideBar.id = 'sideBar';
 
     const content = document.createElement('div');
-    content.id = 'content';
+    content.id = 'content'; //content section to be split into two parts, upper for holding todos, lower for holding add todo btn
+
+    const upperContent = document.createElement('div');
+    upperContent.id = 'upperContent';
+
+
+    const addTodo = document.createElement('button');
+    addTodo.innerHTML = 'Add todo';
+    addTodo.id = 'addTodo-content';
+    const addTodoContainer = document.createElement('div');
+    addTodoContainer.id = 'addTodo-container';
+    addTodoContainer.append(addTodo);
+
+    content.append(upperContent, addTodoContainer);
 
     container.append(header, sideBar, content);
 
@@ -36,7 +51,7 @@ export function pageContent() {
 
     const newProject = document.createElement('div');
     newProject.id = 'newProjectBtn';
-    newProject.innerHTML = '+';
+    newProject.innerHTML = 'Add Project';
 
 
     sideBar.append(homeLink, todayLink, weekLink, projectLink, newProject);
