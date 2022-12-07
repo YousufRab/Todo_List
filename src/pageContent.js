@@ -53,7 +53,7 @@ export const projects = (() => {
             this.id = id;
         }
     }
-    let projectList = ['eat', 'pray', 'love'];
+    let projectList = [];
     let projectNum = 1;
 
     function createProject(projectName) {
@@ -78,5 +78,5 @@ export const projects = (() => {
         projectList.push(project);
     }
 
-    return {render, addToProList, createProject};
+    return {render, addToProList, createProject, projectList};
 })();
