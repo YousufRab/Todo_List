@@ -9,9 +9,14 @@ homeContent.append(createTodo.todoForm());
 
 homeContent.append(pageContent());
 
-projects.addToProList('King shit');
+const newPro = projects.createProject('Achieve enlightenment');
+projects.addToProList(newPro);
+const anotherPro = projects.createProject('Fana');
+projects.addToProList(anotherPro);
+const yetAnotherPro = projects.createProject('do fuck all');
+projects.addToProList(yetAnotherPro);
 projects.render();
-
+console.table(projects.projectList);
 
 // Todo object
 
