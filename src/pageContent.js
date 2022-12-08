@@ -1,4 +1,5 @@
 import { add } from "date-fns";
+import { createTodo } from "./createTodo";
 
 export function pageContent() {
 
@@ -74,6 +75,10 @@ export const projects = (() => {
     let projectList = [];
     let projectNum = 1;
 
+    function returnProList() {
+        return projectList;
+    }
+
     function createProject(projectName) {
         const myProject = new Project(projectName, projectNum);
         projectNum++;
@@ -96,11 +101,22 @@ export const projects = (() => {
         projectList.push(project);
     }
 
-    return {render, addToProList, createProject};
+    return {render, addToProList, createProject, projectList, returnProList};
 })();
 
 
-const sideBarLinks = (() => {            //Module for handling sidebar functionality
+export const sideBarLinks = (() => {            //Module for handling sidebar functionality
 
+    function homeBtn() { // this should display all todos on todo list
+
+        let myTodoList = createTodo.todoList;    // import todo list from createTodo module
+        
+    }
+
+    function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
+
+
+    }
     
+    return {homeBtn};
 })();
