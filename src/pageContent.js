@@ -34,14 +34,17 @@ export function pageContent() {
 
     const homeLink = document.createElement('li');
     homeLink.classList.add('sideBarLinks');
+    homeLink.id = 'homeLink';
     homeLink.innerHTML = 'Home';
 
     const todayLink = document.createElement('li');
     todayLink.classList.add('sideBarLinks');
+    todayLink.id = 'todayLink';
     todayLink.innerHTML = 'Today';
 
     const weekLink = document.createElement('li');
     weekLink.classList.add('sideBarLinks');
+    weekLink.id = 'weekLink';
     weekLink.innerHTML = 'This week';
 
     const projectLink = document.createElement('ul');
@@ -93,5 +96,11 @@ export const projects = (() => {
         projectList.push(project);
     }
 
-    return {render, addToProList, createProject, projectList};
+    return {render, addToProList, createProject};
+})();
+
+
+const sideBarLinks = (() => {            //Module for handling sidebar functionality
+
+    
 })();
