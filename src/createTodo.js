@@ -184,7 +184,7 @@ export const createTodo = (() => {
     }
 
     function createTodoObject () {
-        // Invoke todo class constructor and return created object
+        // Invoke todo class constructor using values from input form and return created object
         const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false, todoNum);
         todoNum++;
         todoList.push(todoObject);
@@ -196,5 +196,5 @@ export const createTodo = (() => {
         mainContentSection.append(mainContent.createToDoCard(todoObject));
     }
 
-    return {todoForm, collectFormInput};
+    return {todoForm, collectFormInput, todoList, Todo};
 })();
