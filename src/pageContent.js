@@ -107,19 +107,31 @@ export const projects = (() => {
 
 export const sideBarLinks = (() => {            //Module for handling sidebar functionality
 
-    function homeBtn() { // this should display all todos on todo list
+    let myTodoList = createTodo.todoList;    // import todo list from createTodo module
 
-        let myTodoList = createTodo.todoList;    // import todo list from createTodo module
+    function homeBtn() { // this should display all todos on todo list
         renderTodos(myTodoList);
     }
 
-    function todayBtn() { //this should display todos based on date, if date == today's date
+    function todayBtn() { //this should display todos based on date, if todo date == today's date
 
-        let myTodoList = createTodo.todoList;
+        let todayDate = new Date();
+        let formattedDate = todayDate.toISOString();
+        let year = formattedDate.substring(0, 4);
+        let month = formattedDate.substring(5, 7);
+        let day = formattedDate.substring(8, 10);
 
-        function todayFilter() { // this function is used in array.filter()
+        let finalTodayDate = year + "-" + month + "-" + day;
+
+        function todayFilter(object) { // this function is used in array.filter()
+            
+            return object.date === finalTodayDate;
 
         }
+
+        const todayTodoList = myTodoList.filter(todayFilter); // use todayFilter function to filter todo list 
+        
+        renderTodos(todayTodoList);
     }
 
     function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
@@ -132,5 +144,5 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     }
     
-    return {homeBtn, renderTodos};
+    return {homeBtn, todayBtn};
 })();
