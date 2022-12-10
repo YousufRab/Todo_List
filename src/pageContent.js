@@ -1,5 +1,6 @@
 import { add } from "date-fns";
 import { createTodo } from "./createTodo";
+import { mainContent } from "./mainContent";
 
 export function pageContent() {
 
@@ -90,7 +91,6 @@ export const projects = (() => {
 
         projectList.forEach(list => {
             const listElement = document.createElement('li');
-            console.log('list element created');
             listElement.classList.add('proList');
             listElement.innerText = list.title;
             listContainer.appendChild(listElement);
@@ -110,13 +110,18 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
     function homeBtn() { // this should display all todos on todo list
 
         let myTodoList = createTodo.todoList;    // import todo list from createTodo module
-        
+        renderTodos(myTodoList);
     }
 
     function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
 
+        todoList.forEach(todoObject => {
+            let mainContentSection = document.querySelector('#upperContent');
+            mainContentSection.append(mainContent.createToDoCard(todoObject));
+
+        });
 
     }
     
-    return {homeBtn};
+    return {homeBtn, renderTodos};
 })();
