@@ -1,5 +1,5 @@
 import './style.css';
-import {pageContent, projects} from './pageContent';
+import {pageContent, projects, sideBarLinks} from './pageContent';
 import {mainContent} from './mainContent';
 import { createTodo } from './createTodo';
 
@@ -18,18 +18,16 @@ projects.addToProList(yetAnotherPro);
 projects.render();
 console.table(projects.projectList);
 
-// Todo object
+//testing home button sidebar
+//create 3 todo objects
+const todo1 = new createTodo.Todo('Eat', 'Stuff your face', '2024-10-21', 'low', false, 1, 'Achieve enlightenment');
+const todo2 = new createTodo.Todo('Pray', 'Prayyy to yo lord', '2024-01-18', 'medium', false, 2, 'Fana');
+const todo3 = new createTodo.Todo('Love','Come onn','2028-12-09', 'high', false, 3, 'do fuck all');
+createTodo.todoList.push(todo1, todo2, todo3);
+const homeBtnLink = document.querySelector('#homeLink');
 
-class Todo {
 
-    constructor(title, description, dueDate, priority, completed) {
-        this.title = title;
-        this.description = description;
-        this.date = dueDate;
-        this.priority = priority;
-        this.completed = completed;
-    }
-}
+homeBtnLink.addEventListener('click', sideBarLinks.homeBtn);
 
 
 
