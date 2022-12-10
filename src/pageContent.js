@@ -113,6 +113,15 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         renderTodos(myTodoList);
     }
 
+    function todayBtn() { //this should display todos based on date, if date == today's date
+
+        let myTodoList = createTodo.todoList;
+
+        function todayFilter() { // this function is used in array.filter()
+
+        }
+    }
+
     function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
 
         todoList.forEach(todoObject => {
