@@ -127,6 +127,20 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     }
 
+    function formatDate(dateObject) {
+
+        let dateForFormatting = dateObject;
+        let formattedDate = dateForFormatting.toISOString();
+        let year = formattedDate.substring(0, 4);
+        let month = formattedDate.substring(5, 7);
+        let day = formattedDate.substring(8, 10);
+
+        let finalTodayDate = year + "-" + month + "-" + day;
+
+        return finalTodayDate; 
+
+    }
+
     function todayBtn() { //this should display todos based on date, if todo date == today's date
 
         let todayDate = formatTodayDate();
@@ -145,6 +159,16 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     function weekBtn() {
 
+        
+
+    }
+
+    function incrementDay(n) { // this function will accept a number 'n' parameter and increment today's date by that number of days
+                               // and return the new date in yyyy-mm-dd string format 
+
+        let todayDate = new Date();
+
+        const incrementedTodayDate = add(todayDate, {days: n});
 
 
     }
