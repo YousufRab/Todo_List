@@ -159,8 +159,28 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     function weekBtn() {
 
-        
+        function weekFilter(object) { //use this function in to filter array
 
+            let todayDate = formatTodayDate();
+            let todayPlusOne = incrementDay(1);
+            let todayPlusTwo = incrementDay(2);
+            let todayPlusThree = incrementDay(3);
+            let todayPlusFour = incrementDay(4);
+            let todayPlusFive = incrementDay(5);
+            let todayPlusSix = incrementDay(6);
+
+            return (object.date === todayDate ||
+                object.date === todayPlusOne ||
+                object.date === todayPlusTwo ||
+                object.date === todayPlusThree ||
+                object.date === todayPlusFour ||
+                object.date === todayPlusFive ||
+                object.date === todayPlusSix) 
+        }
+
+        const thisWeekList = myTodoList.filter(weekFilter);
+        clearTodos();
+        renderTodos(thisWeekList);
     }
 
     function incrementDay(n) { // this function will accept a number 'n' parameter and increment today's date by that number of days
@@ -170,8 +190,6 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
         const nPlusTodayDate = add(todayDate, {days: n});
         const incrementedDate = formatDate(nPlusTodayDate); //format the incremented todays date into required format
-
-        console.log(incrementedDate);
 
         return incrementedDate;
     }
@@ -199,5 +217,5 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         }
     }
     
-    return {homeBtn, todayBtn, incrementDay};
+    return {homeBtn, todayBtn, weekBtn, incrementDay};
 })();
