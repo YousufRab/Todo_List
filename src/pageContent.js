@@ -131,6 +131,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
         const todayTodoList = myTodoList.filter(todayFilter); // use todayFilter function to filter todo list 
         
+        clearTodos();
         renderTodos(todayTodoList);
     }
 
@@ -142,6 +143,16 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
         });
 
+    }
+
+    function clearTodos() { // this function will clear all displayed todos 
+
+        const allDisplayedTodos = document.querySelectorAll('.todoCard');
+
+        if (allDisplayedTodos.length > 0) {
+            const displayedTodos = document.querySelector('.todoCard');
+            displayedTodos.parentNode.removeChild(displayedTodos);
+        }
     }
     
     return {homeBtn, todayBtn};
