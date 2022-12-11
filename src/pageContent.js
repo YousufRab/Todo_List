@@ -113,7 +113,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         renderTodos(myTodoList);
     }
 
-    function todayBtn() { //this should display todos based on date, if todo date == today's date
+    function formatTodayDate() {
 
         let todayDate = new Date();
         let formattedDate = todayDate.toISOString();
@@ -123,9 +123,17 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
         let finalTodayDate = year + "-" + month + "-" + day;
 
+        return finalTodayDate;
+
+    }
+
+    function todayBtn() { //this should display todos based on date, if todo date == today's date
+
+        let todayDate = formatTodayDate();
+
         function todayFilter(object) { // this function is used in array.filter()
             
-            return object.date === finalTodayDate;
+            return object.date === todayDate;
 
         }
 
@@ -133,6 +141,12 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         
         clearTodos();
         renderTodos(todayTodoList);
+    }
+
+    function weekBtn() {
+
+
+
     }
 
     function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
@@ -155,7 +169,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
                 todoElement.parentNode.removeChild(todoElement);
 
-            })
+            });
         }
     }
     
