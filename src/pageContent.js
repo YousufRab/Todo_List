@@ -135,9 +135,9 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         let month = formattedDate.substring(5, 7);
         let day = formattedDate.substring(8, 10);
 
-        let finalTodayDate = year + "-" + month + "-" + day;
+        let finalFormattedDate = year + "-" + month + "-" + day;
 
-        return finalTodayDate; 
+        return finalFormattedDate; 
 
     }
 
@@ -168,9 +168,12 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
         let todayDate = new Date();
 
-        const incrementedTodayDate = add(todayDate, {days: n});
+        const nPlusTodayDate = add(todayDate, {days: n});
+        const incrementedDate = formatDate(nPlusTodayDate); //format the incremented todays date into required format
 
+        console.log(incrementedDate);
 
+        return incrementedDate;
     }
 
     function renderTodos(todoList) {    // this function accepts todoList object and renders it to content section
@@ -180,7 +183,6 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
             mainContentSection.append(mainContent.createToDoCard(todoObject));
 
         });
-
     }
 
     function clearTodos() { // this function will clear all displayed todos 
@@ -197,5 +199,5 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         }
     }
     
-    return {homeBtn, todayBtn};
+    return {homeBtn, todayBtn, incrementDay};
 })();
