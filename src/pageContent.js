@@ -38,16 +38,19 @@ export function pageContent() {
     homeLink.classList.add('sideBarLinks');
     homeLink.id = 'homeLink';
     homeLink.innerHTML = 'Home';
+    homeLink.addEventListener('click', sideBarLinks.homeBtn);
 
     const todayLink = document.createElement('li');
     todayLink.classList.add('sideBarLinks');
     todayLink.id = 'todayLink';
     todayLink.innerHTML = 'Today';
+    todayLink.addEventListener('click', sideBarLinks.todayBtn);
 
     const weekLink = document.createElement('li');
     weekLink.classList.add('sideBarLinks');
     weekLink.id = 'weekLink';
     weekLink.innerHTML = 'This week';
+    weekLink.addEventListener('click', sideBarLinks.weekBtn);
 
     const projectLink = document.createElement('ul');
     projectLink.classList.add('sideBarLinks');
