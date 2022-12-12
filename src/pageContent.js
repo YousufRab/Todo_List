@@ -110,6 +110,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
     let myTodoList = createTodo.todoList;    // import todo list from createTodo module
 
     function homeBtn() { // this should display all todos on todo list
+        clearTodos();
         renderTodos(myTodoList);
     }
 
@@ -217,5 +218,5 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         }
     }
     
-    return {homeBtn, todayBtn, weekBtn, incrementDay};
+    return {homeBtn, todayBtn, weekBtn};
 })();
