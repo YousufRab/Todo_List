@@ -4,7 +4,7 @@ import { da } from "date-fns/locale";
 import { mainContent } from "./mainContent";
 
 
-export const createTodo = (() => {
+export const createTodo = (() => { // this module handles everything related to the todo form and project forms
 
     class Todo {
 
@@ -42,14 +42,18 @@ export const createTodo = (() => {
 
         const inputSidebar = document.createElement('div');
         inputSidebar.classList.add('inputSide');
-        const sideTodo = document.createElement('div');
+        const sideTodo = document.createElement('div'); //add event click even listener to this 
         sideTodo.classList.add('sideTodo');
         sideTodo.innerHTML = 'Todo';
-        const sideProject = document.createElement('div');
+        const sideProject = document.createElement('div'); //add event click even listener to this 
         sideProject.classList.add('sideProject');
         sideProject.innerHTML = 'Project';
 
         inputSidebar.append(sideTodo, sideProject); // append this to inputContainer
+
+        const rightSideDiv = document.createElement('div');
+        rightSideDiv.id = 'rightSideDiv';
+
 
         // Create fieldset with separate divs for each input section
         const formContainer = document.createElement('div');
@@ -134,8 +138,9 @@ export const createTodo = (() => {
         prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
         prioDiv.append(prioTitle, prioBtnDiv);
 
+        rightSideDiv.append(fieldset, prioDiv)
         fieldset.append(titleDiv, descDiv, dateDiv);
-        inputContainer.append(inputHeader, inputSidebar, fieldset, prioDiv);
+        inputContainer.append(inputHeader, inputSidebar, rightSideDiv);
 
         return inputContainer;
 
