@@ -45,9 +45,20 @@ export const createTodo = (() => { // this module handles everything related to 
         const sideTodo = document.createElement('div'); //add event click even listener to this 
         sideTodo.classList.add('sideTodo');
         sideTodo.innerHTML = 'To Do';
+        sideTodo.addEventListener('click', () => {
+            if (projectForm.style.display == 'block') {
+                switchForm();
+                } 
+        });
+
         const sideProject = document.createElement('div'); //add event click even listener to this 
         sideProject.classList.add('sideProject');
         sideProject.innerHTML = 'Project';
+        sideProject.addEventListener('click', () => {
+            if (formContainer.style.display == 'block') {
+                switchForm();
+            }
+        });
 
         inputSidebar.append(sideTodo, sideProject); // append this to inputContainer
 
@@ -57,7 +68,8 @@ export const createTodo = (() => { // this module handles everything related to 
 
         // Create fieldset with separate divs for each input section
         const formContainer = document.createElement('div');
-        formContainer.classList.add('formContainer');
+        formContainer.id = 'formContainer';
+        formContainer.style.display = 'block';
         const fieldset = document.createElement('fieldset');
 
         const titleDiv = document.createElement('div');
@@ -231,7 +243,16 @@ export const createTodo = (() => { // this module handles everything related to 
     }
 
     function switchForm () {    // this function will switch between to do and Project forms
+        const formContainer = document.querySelector('#formContainer');
+        const projectform = document.querySelector('#projectForm');
 
+        if (formContainer.style.display == 'block') {
+            formContainer.style.display = 'none';
+            projectform.style.display = 'block';
+        } else {
+            formContainer.style.display = 'block';
+            projectform.style.display = 'none';
+        }
     }
 
     return {todoForm, collectFormInput, todoList, Todo};
