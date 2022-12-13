@@ -2,6 +2,7 @@ import { daysInWeek, daysToWeeks, isDate } from "date-fns";
 import getDate from "date-fns/getDate";
 import { da } from "date-fns/locale";
 import { mainContent } from "./mainContent";
+import { projects } from "./pageContent";
 
 
 export const createTodo = (() => { // this module handles everything related to the todo form and project forms
@@ -118,7 +119,7 @@ export const createTodo = (() => { // this module handles everything related to 
         lowPriority.setAttribute('type', 'radio');
         lowPriority.setAttribute('name', 'priority');
         lowPriority.id = 'lowPrio';
-        lowPriority.checked = true;
+        lowPriority.checked = false;
         lowPriority.classList.add('prioBtn');
         const lowLabel = document.createElement('label');
         lowLabel.setAttribute('for', 'lowPrio');
@@ -151,7 +152,7 @@ export const createTodo = (() => { // this module handles everything related to 
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
         addTodoBtnContainer.append(addTodoBtn);
 
-        // Create Add project form
+        // Create/Add project form
 
         const projectForm = document.createElement('div');
         projectForm.id = 'projectForm';
@@ -164,11 +165,13 @@ export const createTodo = (() => { // this module handles everything related to 
         const projectNameInput = document.createElement('input');
         projectNameInput.id = 'projectNameInput';
         projectNameInput.required = true;
+        projectNameInput.setAttribute('maxlength', '40');
 
         const addProjectBtn = document.createElement('button');
         addProjectBtn.setAttribute('type', 'button');
         addProjectBtn.id = 'addProjectBtnForm';
         addProjectBtn.innerHTML = 'Create Project';
+        addProjectBtn.addEventListener('click', createProjectBtnClicked);
 
         projectForm.append(projectLabel, projectNameInput, addProjectBtn);
         //
@@ -254,6 +257,21 @@ export const createTodo = (() => { // this module handles everything related to 
             projectform.style.display = 'none';
         }
     }
+
+    function collectProjectFormInput() {
+        let projectName = document.querySelector('#projectNameInput').value;
+
+        return projectName;
+    }
+
+    function createProjectBtnClicked() {
+        const newProject = collectProjectFormInput()
+        const newProjectObject = projects.createProject(newProject);
+        projects.projectList.push(newProjectObject);
+        projects.render();
+        console.log(projects.projectList);
+        document.querySelector('#projectNameInput').value = '';    // clear input
+    } 
 
     return {todoForm, collectFormInput, todoList, Todo};
 })();
