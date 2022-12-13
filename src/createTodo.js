@@ -130,17 +130,20 @@ export const createTodo = (() => { // this module handles everything related to 
         highLabel.setAttribute('for', 'highPrio');
         highLabel.innerHTML = 'High';
 
+        const addTodoBtnContainer = document.createElement('div');
+        addTodoBtnContainer.id = 'addTodoBtnContainer-Form';
         const addTodoBtn = document.createElement('button');
         addTodoBtn.innerHTML = 'ADD TO DO';
         addTodoBtn.setAttribute('type', 'button');
         addTodoBtn.id = 'addTodoBtn';
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
+        addTodoBtnContainer.append(addTodoBtn);
 
         // Create Add project form
 
         const projectForm = document.createElement('div');
         projectForm.id = 'projectForm';
-        // projectForm.style.display = 'none';
+        projectForm.style.display = 'none';
 
         const projectLabel = document.createElement('label');
         projectLabel.innerHTML = 'Project Name: ';
@@ -158,12 +161,12 @@ export const createTodo = (() => { // this module handles everything related to 
         projectForm.append(projectLabel, projectNameInput, addProjectBtn);
         //
         
-        prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
+        prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtnContainer);
         prioDiv.append(prioTitle, prioBtnDiv);
 
         fieldset.append(titleDiv, descDiv, dateDiv);
         formContainer.append(fieldset, prioDiv);
-        
+
         rightSideDiv.append(formContainer, projectForm);
         
         inputContainer.append(inputHeader, inputSidebar, rightSideDiv);
@@ -227,7 +230,9 @@ export const createTodo = (() => { // this module handles everything related to 
         mainContentSection.append(mainContent.createToDoCard(todoObject));
     }
 
-    
+    function switchForm () {    // this function will switch between to do and Project forms
+
+    }
 
     return {todoForm, collectFormInput, todoList, Todo};
 })();
