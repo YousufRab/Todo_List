@@ -130,32 +130,40 @@ export const createTodo = (() => { // this module handles everything related to 
         highLabel.setAttribute('for', 'highPrio');
         highLabel.innerHTML = 'High';
 
-        const addTodoBtn = document.createElement('div');
-        addTodoBtn.innerHTML = 'Add todo';
+        const addTodoBtn = document.createElement('button');
+        addTodoBtn.innerHTML = 'ADD TO DO';
+        addTodoBtn.setAttribute('type', 'button');
         addTodoBtn.id = 'addTodoBtn';
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
 
         // Create Add project form
+
         const projectForm = document.createElement('div');
         projectForm.id = 'projectForm';
-        projectForm.style.display = 'none';
+        // projectForm.style.display = 'none';
 
         const projectLabel = document.createElement('label');
-        projectLabel.innerHTML = 'Project Name';
+        projectLabel.innerHTML = 'Project Name: ';
         projectLabel.setAttribute('for', 'projectNameInput');
 
         const projectNameInput = document.createElement('input');
         projectNameInput.id = 'projectNameInput';
         projectNameInput.required = true;
 
-        projectForm.append(projectLabel, projectNameInput);
+        const addProjectBtn = document.createElement('button');
+        addProjectBtn.setAttribute('type', 'button');
+        addProjectBtn.id = 'addProjectBtnForm';
+        addProjectBtn.innerHTML = 'Create Project';
 
+        projectForm.append(projectLabel, projectNameInput, addProjectBtn);
+        //
         
         prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
         prioDiv.append(prioTitle, prioBtnDiv);
 
         fieldset.append(titleDiv, descDiv, dateDiv);
         formContainer.append(fieldset, prioDiv);
+        
         rightSideDiv.append(formContainer, projectForm);
         
         inputContainer.append(inputHeader, inputSidebar, rightSideDiv);
