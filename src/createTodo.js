@@ -44,7 +44,7 @@ export const createTodo = (() => { // this module handles everything related to 
         inputSidebar.classList.add('inputSide');
         const sideTodo = document.createElement('div'); //add event click even listener to this 
         sideTodo.classList.add('sideTodo');
-        sideTodo.innerHTML = 'Todo';
+        sideTodo.innerHTML = 'To Do';
         const sideProject = document.createElement('div'); //add event click even listener to this 
         sideProject.classList.add('sideProject');
         sideProject.innerHTML = 'Project';
@@ -138,8 +138,10 @@ export const createTodo = (() => { // this module handles everything related to 
         prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
         prioDiv.append(prioTitle, prioBtnDiv);
 
-        rightSideDiv.append(fieldset, prioDiv)
         fieldset.append(titleDiv, descDiv, dateDiv);
+        formContainer.append(fieldset, prioDiv);
+        rightSideDiv.append(formContainer)
+        
         inputContainer.append(inputHeader, inputSidebar, rightSideDiv);
 
         return inputContainer;
