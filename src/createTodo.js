@@ -134,13 +134,29 @@ export const createTodo = (() => { // this module handles everything related to 
         addTodoBtn.innerHTML = 'Add todo';
         addTodoBtn.id = 'addTodoBtn';
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
+
+        // Create Add project form
+        const projectForm = document.createElement('div');
+        projectForm.id = 'projectForm';
+        projectForm.style.display = 'none';
+
+        const projectLabel = document.createElement('label');
+        projectLabel.innerHTML = 'Project Name';
+        projectLabel.setAttribute('for', 'projectNameInput');
+
+        const projectNameInput = document.createElement('input');
+        projectNameInput.id = 'projectNameInput';
+        projectNameInput.required = true;
+
+        projectForm.append(projectLabel, projectNameInput);
+
         
         prioBtnDiv.append(lowPriority, lowLabel, medPriority, medLabel, highPriority, highLabel, addTodoBtn)
         prioDiv.append(prioTitle, prioBtnDiv);
 
         fieldset.append(titleDiv, descDiv, dateDiv);
         formContainer.append(fieldset, prioDiv);
-        rightSideDiv.append(formContainer)
+        rightSideDiv.append(formContainer, projectForm);
         
         inputContainer.append(inputHeader, inputSidebar, rightSideDiv);
 
@@ -202,6 +218,8 @@ export const createTodo = (() => { // this module handles everything related to 
         let mainContentSection = document.querySelector('#upperContent');
         mainContentSection.append(mainContent.createToDoCard(todoObject));
     }
+
+    
 
     return {todoForm, collectFormInput, todoList, Todo};
 })();
