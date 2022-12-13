@@ -95,6 +95,7 @@ export const projects = (() => {
         projectList.forEach(list => {
             const listElement = document.createElement('li');
             listElement.classList.add('proList');
+            listElement.id = 'ProjectNumber' + list.id;
             listElement.innerText = list.title;
             listContainer.appendChild(listElement);
         })
