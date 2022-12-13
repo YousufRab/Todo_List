@@ -9,7 +9,7 @@ export function pageContent() {
 
     const header = document.createElement('div');
     header.id = 'header';
-    header.innerHTML = 'Todo List';
+    header.innerHTML = 'To do List';
 
     const sideBar = document.createElement('div');
     sideBar.id = 'sideBar';
@@ -22,7 +22,7 @@ export function pageContent() {
 
 
     const addTodo = document.createElement('button');
-    addTodo.innerHTML = 'Add todo';
+    addTodo.innerHTML = 'ADD TO DO';
     addTodo.id = 'addTodo-content';
     const addTodoContainer = document.createElement('div');
     addTodoContainer.id = 'addTodo-container';
