@@ -78,11 +78,8 @@ export const projects = (() => {
     }
     let projectList = [];
     let renderedProjects = []      // this will store projects that are already rendered to DOM
+    let lastProjectClicked = []        // this is a one element array that will hold the last project clicked
     let projectNum = 1;
-
-    function returnProList() {
-        return projectList;
-    }
 
     function createProject(projectName) {
         const myProject = new Project(projectName, projectNum);
@@ -120,7 +117,7 @@ export const projects = (() => {
         projectList.push(project);  
     }
 
-    return {render, addToProList, createProject, projectList, returnProList};
+    return {render, addToProList, createProject, projectList};
 })();
 
 
