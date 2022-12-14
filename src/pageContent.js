@@ -87,6 +87,13 @@ export const projects = (() => {
         return myProject;
     }
 
+    function projectClicked() {     // this function will be called whenever rendered projects on DOM are clicked
+
+        let projectID = Number((this.id).substring(7));
+        console.log(projectID);
+
+    }
+
     function render() {
         let listContainer = document.querySelector('#dataList');
 
@@ -94,8 +101,9 @@ export const projects = (() => {
             projectList.forEach(list => {
                 const listElement = document.createElement('li');
                 listElement.classList.add('proList');
-                listElement.id = 'ProjectNumber' + list.id;
+                listElement.id = 'Project' + list.id; 
                 listElement.innerText = list.title;
+                listElement.addEventListener('click', projectClicked);
                 listContainer.appendChild(listElement);
                 renderedProjects.push(list);
             })
@@ -104,8 +112,9 @@ export const projects = (() => {
                 if (!renderedProjects.includes(list)) {
                     const listElement = document.createElement('li');
                     listElement.classList.add('proList');
-                    listElement.id = 'ProjectNumber' + list.id;
+                    listElement.id = 'Project' + list.id;
                     listElement.innerText = list.title;
+                    listElement.addEventListener('click', projectClicked);
                     listContainer.appendChild(listElement);
                     renderedProjects.push(list);
                 }
