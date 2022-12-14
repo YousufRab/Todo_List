@@ -100,6 +100,7 @@ export const projects = (() => {
                 listElement.id = 'ProjectNumber' + list.id;
                 listElement.innerText = list.title;
                 listContainer.appendChild(listElement);
+                renderedProjects.push(list);
             })
         } else {
             projectList.forEach(list => {
@@ -109,14 +110,14 @@ export const projects = (() => {
                     listElement.id = 'ProjectNumber' + list.id;
                     listElement.innerText = list.title;
                     listContainer.appendChild(listElement);
+                    renderedProjects.push(list);
                 }
             })
         }
     }
 
     function addToProList (project) {
-        projectList.push(project);
-        renderedProjects.push(project);
+        projectList.push(project);  
     }
 
     return {render, addToProList, createProject, projectList, returnProList};
