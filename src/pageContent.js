@@ -77,6 +77,7 @@ export const projects = (() => {
         }
     }
     let projectList = [];
+    let renderedProjects = []      // this will store projects that are already rendered to DOM
     let projectNum = 1;
 
     function returnProList() {
@@ -92,17 +93,30 @@ export const projects = (() => {
     function render() {
         let listContainer = document.querySelector('#dataList');
 
-        projectList.forEach(list => {
-            const listElement = document.createElement('li');
-            listElement.classList.add('proList');
-            listElement.id = 'ProjectNumber' + list.id;
-            listElement.innerText = list.title;
-            listContainer.appendChild(listElement);
-        })
+        if (listContainer.getElementsByTagName('li').length == 0) {  // check if any list elements have already been rendered to Dom
+            projectList.forEach(list => {
+                const listElement = document.createElement('li');
+                listElement.classList.add('proList');
+                listElement.id = 'ProjectNumber' + list.id;
+                listElement.innerText = list.title;
+                listContainer.appendChild(listElement);
+            })
+        } else {
+            projectList.forEach(list => {
+                if (!renderedProjects.includes(list)) {
+                    const listElement = document.createElement('li');
+                    listElement.classList.add('proList');
+                    listElement.id = 'ProjectNumber' + list.id;
+                    listElement.innerText = list.title;
+                    listContainer.appendChild(listElement);
+                }
+            })
+        }
     }
 
     function addToProList (project) {
         projectList.push(project);
+        renderedProjects.push(project);
     }
 
     return {render, addToProList, createProject, projectList, returnProList};
