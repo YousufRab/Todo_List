@@ -89,8 +89,11 @@ export const projects = (() => {
 
     function projectClicked() {     // this function will be called whenever rendered projects on DOM are clicked
 
-        let projectID = Number((this.id).substring(7));
-        console.log(projectID);
+        let projectID = Number((this.id).substring(7)); //extract the project id number from DOM element id 
+        let foundProject = renderedProjects.find((object) => { // search renderedProjects list for projects that match the id 
+            return object.id === projectID;
+        })
+        console.log(foundProject);
 
     }
 
