@@ -267,7 +267,7 @@ export const createTodo = (() => { // this module handles everything related to 
     function createProjectBtnClicked() {
         const newProject = collectProjectFormInput()
         const newProjectObject = projects.createProject(newProject);
-        projects.projectList.push(newProjectObject);
+        projects.addToProList(newProjectObject);
         projects.render();
         console.log(projects.projectList);
         document.querySelector('#projectNameInput').value = '';    // clear input
