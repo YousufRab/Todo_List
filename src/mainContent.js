@@ -135,6 +135,13 @@ export const mainContent = (() => {
         return newFormatDate;
     }
 
+    function deleteBtn() {          // this function will be called when TodoCard delete icon is clicked
+
+        
+
+    }
+
+
     return {createToDoCard}
 })();
 
