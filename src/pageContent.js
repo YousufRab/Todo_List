@@ -83,6 +83,8 @@ export const projects = (() => {
 
     function createProject(projectName) {
         const myProject = new Project(projectName, projectNum);
+        lastProjectClicked.length = 0;
+        lastProjectClicked.push(myProject);
         projectNum++;
         return myProject;
     }
