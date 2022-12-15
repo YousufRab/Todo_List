@@ -226,18 +226,27 @@ export const createTodo = (() => { // this module handles everything related to 
     function addTodoBtnClicked() {
         const myTodo = createTodoObject();
         console.log(myTodo); // this is just for testing purposes
-        console.log(todoNum);
         console.table(todoList);
         displayTodo(myTodo);
         clearForm();
     }
 
     function createTodoObject () {
-        // Invoke todo class constructor using values from input form and return created object
-        const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false, todoNum);
-        todoNum++;
-        todoList.push(todoObject);
-        return todoObject;
+        // Check if lastProjectClicked array from projects module has any elements in it
+        if (projects.lastProjectClicked.length === 0) {
+            const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false, todoNum);
+            todoNum++;
+            todoList.push(todoObject);
+            return todoObject;
+        } else {
+            
+            let projectName = projects.lastProjectClicked[0].title;
+            // Invoke todo class constructor using values from input form, and the associated project name held by 'projectName' variable above, and return created object     
+            const todoObject = new Todo(collectFormInput().newTitle, collectFormInput().newDescription, collectFormInput().newDate, collectFormInput().newPriority, false, todoNum, projectName);
+            todoNum++;
+            todoList.push(todoObject);
+            return todoObject;
+        }
     }
 
     function displayTodo (todoObject) {
@@ -265,7 +274,7 @@ export const createTodo = (() => { // this module handles everything related to 
     }
 
     function createProjectBtnClicked() {
-        const newProject = collectProjectFormInput()
+        const newProject = collectProjectFormInput();  
         const newProjectObject = projects.createProject(newProject);
         projects.addToProList(newProjectObject);
         projects.render();
