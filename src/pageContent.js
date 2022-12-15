@@ -67,7 +67,7 @@ export function pageContent() {
     return container;
 }
 
-export const projects = (() => {
+export const projects = (() => {    //Module for handling projects in sidebar
 
     class Project {
 
@@ -76,6 +76,8 @@ export const projects = (() => {
             this.id = id;
         }
     }
+
+    let myTodoList = createTodo.todoList;    // import todo list from createTodo module
     let projectList = [];
     let renderedProjects = []      // this will store projects that are already rendered to DOM
     let lastProjectClicked = []        // this is a one element array that will hold the last project clicked
@@ -97,6 +99,11 @@ export const projects = (() => {
             return object.id === projectID;
         })
         lastProjectClicked.push(foundProject);
+        let projectTodoList = myTodoList.filter((object) => {    //filter all to do objects with matching project
+            return object.project == foundProject.title;
+        })
+        sideBarLinks.clearTodos();                      // clear all displayed todos
+        sideBarLinks.renderTodos(projectTodoList);      // use renderToDos function to render filtered list to DOM
     }
 
     function render() {
@@ -135,7 +142,7 @@ export const projects = (() => {
 })();
 
 
-export const sideBarLinks = (() => {            //Module for handling sidebar functionality
+export const sideBarLinks = (() => {            //Module for handling sidebar functionality EXCEPT projects
 
     let myTodoList = createTodo.todoList;    // import todo list from createTodo module
 
@@ -248,5 +255,5 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
         }
     }
     
-    return {homeBtn, todayBtn, weekBtn};
+    return {homeBtn, todayBtn, weekBtn, renderTodos, clearTodos};
 })();
