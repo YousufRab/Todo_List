@@ -147,6 +147,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
     let myTodoList = createTodo.todoList;    // import todo list from createTodo module
 
     function homeBtn() { // this should display all todos on todo list
+        projects.lastProjectClicked.length = 0;
         clearTodos();
         renderTodos(myTodoList);
     }
@@ -181,6 +182,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     function todayBtn() { //this should display todos based on date, if todo date == today's date
 
+        projects.lastProjectClicked.length = 0;
         let todayDate = formatTodayDate();
 
         function todayFilter(object) { // this function is used in array.filter()
@@ -197,6 +199,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     function weekBtn() {
 
+        projects.lastProjectClicked.length = 0;
         function weekFilter(object) { //use this function in to filter array
 
             let todayDate = formatTodayDate();
