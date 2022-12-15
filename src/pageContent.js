@@ -89,12 +89,12 @@ export const projects = (() => {
 
     function projectClicked() {     // this function will be called whenever rendered projects on DOM are clicked
 
+        lastProjectClicked.length = 0;                  // Empty out the array first
         let projectID = Number((this.id).substring(7)); //extract the project id number from DOM element id 
         let foundProject = renderedProjects.find((object) => { // search renderedProjects list for projects that match the id 
             return object.id === projectID;
         })
-        console.log(foundProject);
-
+        lastProjectClicked.push(foundProject);
     }
 
     function render() {
