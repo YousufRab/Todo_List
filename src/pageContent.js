@@ -131,7 +131,7 @@ export const projects = (() => {
         projectList.push(project);  
     }
 
-    return {render, addToProList, createProject, projectList};
+    return {render, addToProList, createProject, projectList, lastProjectClicked};
 })();
 
 
