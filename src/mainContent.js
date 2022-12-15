@@ -7,6 +7,7 @@ export const mainContent = (() => {
     function createToDoCard (todo) {
 
         const todoCard = document.createElement('div');
+        todoCard.id = 'todo' + todo.id;
         todoCard.classList.add('todoCard');
         todoCard.style.backgroundColor = prioLevel(todo);
 
