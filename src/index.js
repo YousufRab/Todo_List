@@ -9,15 +9,6 @@ homeContent.append(createTodo.todoForm());
 
 homeContent.append(pageContent());
 
-const newPro = projects.createProject('Achieve enlightenment');
-projects.addToProList(newPro);
-const anotherPro = projects.createProject('Fana');
-projects.addToProList(anotherPro);
-const yetAnotherPro = projects.createProject('do fuck all');
-projects.addToProList(yetAnotherPro);
-projects.render();
-console.table(projects.projectList);
-
 //testing home button sidebar - delete after testing is done
 //create 3 todo objects
 const todo1 = new createTodo.Todo('Eat', 'Stuff your face', '2022-12-11', 'low', false, 1, 'Achieve enlightenment');
