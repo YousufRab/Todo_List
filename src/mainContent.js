@@ -3,7 +3,7 @@ import editSVG from './edit.svg';
 import deleteSVG from './deleteIcon.svg';
 import { createTodo } from "./createTodo";
 
-export const mainContent = (() => {
+export const mainContent = (() => {     // this module handles everything related to creation of to do card, edit button and details button DOM elements respectively
     
     function createToDoCard (todo) {
 
@@ -145,18 +145,21 @@ export const mainContent = (() => {
         (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
 
         let todoID = Number((myTodoCard.id).substring(4));      // extract the to do object ID number from DOM element ID
-        let myTodo = createTodo.todoList.find((object) => {     // this finds the specific to do object from the todoList array
+        let myTodo = createTodo.todoList.find((object) => {     // find the specific to-do object from the todoList array
             return object.id == todoID;
         })
 
-        for (var i = createTodo.todoList.length - 1; i >= 0; i--) {     // loop through the to do list array and delete the specific to do based on id
+        for (var i = createTodo.todoList.length - 1; i >= 0; i--) {     // loop through the to do list array and delete the specific to-do element based on id
             if (createTodo.todoList[i].id == myTodo.id) {
                 createTodo.todoList.splice(i, 1);
             }
         }
-
     }
 
+    function getTodoCardID() {              // this function will find and return the formatted id of the todo card depending on what child elements of todo card are clicked
+        
+        
+    }
 
     return {createToDoCard}
 })();
