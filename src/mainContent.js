@@ -46,6 +46,7 @@ export const mainContent = (() => {
         deleteDiv.classList.add('deleteBtn');
         const deleteBtnImg = new Image();
         deleteBtnImg.src = deleteSVG;
+        deleteBtnImg.addEventListener('click', deleteBtn)
         deleteDiv.append(deleteBtnImg);
 
 
@@ -137,7 +138,12 @@ export const mainContent = (() => {
 
     function deleteBtn() {          // this function will be called when TodoCard delete icon is clicked
 
-        
+        let deleteContainer = this.parentNode;
+        let mainInfo = deleteContainer.parentNode;
+        let myTodoCard = mainInfo.parentNode;
+        (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
+
+        let todoID = myTodoCard.id;
 
     }
 
