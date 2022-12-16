@@ -145,7 +145,15 @@ export const mainContent = (() => {
         (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
 
         let todoID = Number((myTodoCard.id).substring(4));      // extract the to do object ID number from DOM element ID
+        let myTodo = createTodo.todoList.find((object) => {     // this finds the specific to do object from the todoList array
+            return object.id == todoID;
+        })
 
+        for (var i = createTodo.todoList.length - 1; i >= 0; i--) {     // loop through the to do list array and delete the specific to do based on id
+            if (createTodo.todoList[i].id == myTodo.id) {
+                createTodo.todoList.splice(i, 1);
+            }
+        }
 
     }
 
