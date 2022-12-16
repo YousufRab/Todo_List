@@ -1,6 +1,7 @@
 import { de } from "date-fns/locale";
 import editSVG from './edit.svg';
 import deleteSVG from './deleteIcon.svg';
+import { createTodo } from "./createTodo";
 
 export const mainContent = (() => {
     
@@ -143,7 +144,8 @@ export const mainContent = (() => {
         let myTodoCard = mainInfo.parentNode;
         (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
 
-        let todoID = myTodoCard.id;
+        let todoID = Number((myTodoCard.id).substring(4));      // extract the to do object ID number from DOM element ID
+
 
     }
 
