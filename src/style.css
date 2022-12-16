@@ -107,6 +107,7 @@ body {
     flex-direction: column;
     grid-column: 1/2;
     grid-row: 2/3;
+    background-color: yellow;
 }
 
 #rightSideDiv {
@@ -132,3 +133,33 @@ fieldset {
     text-align: center;
 }
 
+
+ /* All Edit Container related CSS properties */
+#editContainer {
+    background-color: bisque;
+}
+
+#proNameContainer {
+    display: flex;
+}
+
+#editCancel {
+    margin-left: auto;
+}
+
+#bottomDivEdit {
+    display: flex;
+    justify-content: space-between;
+}
+
+#conEditBtn {
+    margin-right: 8px;
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid green;
+}
+
+#descriptionEdit {
+    height: 70px;
+    width: 420px;
+}
