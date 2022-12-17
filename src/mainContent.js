@@ -47,7 +47,8 @@ export const mainContent = (() => {     // this module handles everything relate
         deleteDiv.classList.add('deleteBtn');
         const deleteBtnImg = new Image();
         deleteBtnImg.src = deleteSVG;
-        deleteBtnImg.addEventListener('click', deleteBtn)
+        deleteBtnImg.classList.add('deleteBtnImg');
+        deleteBtnImg.addEventListener('click', deleteBtn);
         deleteDiv.append(deleteBtnImg);
 
 
@@ -138,16 +139,18 @@ export const mainContent = (() => {     // this module handles everything relate
     }
 
     function deleteBtn() {          // this function will be called when TodoCard delete icon is clicked
+        let clickedElement = this;
 
         let deleteContainer = this.parentNode;
         let mainInfo = deleteContainer.parentNode;
         let myTodoCard = mainInfo.parentNode;
         (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
 
-        let todoID = Number((myTodoCard.id).substring(4));      // extract the to do object ID number from DOM element ID
+        let todoID = getTodoCardID(clickedElement);
+
         let myTodo = createTodo.todoList.find((object) => {     // find the specific to-do object from the todoList array
             return object.id == todoID;
-        })
+        });
 
         for (var i = createTodo.todoList.length - 1; i >= 0; i--) {     // loop through the to do list array and delete the specific to-do element based on id
             if (createTodo.todoList[i].id == myTodo.id) {
@@ -156,9 +159,19 @@ export const mainContent = (() => {     // this module handles everything relate
         }
     }
 
-    function getTodoCardID() {              // this function will find and return the formatted id of the todo card depending on what child elements of todo card are clicked
+    function getTodoCardID(element) {              // this function will find and return the formatted id of the todo card depending on what child elements of todo card are clicked
+
+        let deleteContainer = element.parentNode;
+        let mainInfo = deleteContainer.parentNode;
+        let myTodoCard = mainInfo.parentNode;
+        let todoID = Number((myTodoCard.id).substring(4));
         
-        
+        return todoID;
+    }
+
+    function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
+
+
     }
 
     return {createToDoCard}
