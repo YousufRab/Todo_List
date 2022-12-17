@@ -162,4 +162,6 @@ fieldset {
 #descriptionEdit {
     height: 70px;
     width: 420px;
+    vertical-align: top;
+    resize: none;
 }
