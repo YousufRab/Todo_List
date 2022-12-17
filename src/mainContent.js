@@ -173,7 +173,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         function displayToEdit(Object) {        // Accepts object input and displays properties to edit form
 
-            proName.innerHTML = Object.title;
+            proName.innerText = Object.title;
 
             description.innerText = Object.description;
 
@@ -187,7 +187,37 @@ export const mainContent = (() => {     // this module handles everything relate
                 highPrio.checked = true;
             }
         }
+    }
 
+    function confirmEditBtn() {             // Called when confirm Edit button is clicked
+
+        let editTodoId = getTodoCardID(this); // FIX THIS THE PROBLEM IS HERE
+        let myTodo = findTodo(editTodoId);
+        console.log(myTodo);
+
+        const proName = document.getElementById('proName');
+        const description = document.getElementById('descriptionEdit');
+        const date = document.getElementById('editDate');
+        const lowPrio = document.getElementById('lowPrioEdit');
+        const medPrio = document.getElementById('medPrioEdit');
+        const highPrio = document.getElementById('highPrioEdit');
+
+        const todoIndex = createTodo.todoList.indexOf(myTodo);
+
+        // Modify to do object values
+        myTodo.title = proName.innerText;
+        myTodo.description = description.innerText;
+        myTodo.date = date.value;
+        
+        if (lowPrio.checked == true) {
+            myTodo.priority = 'low';
+        } else if (medPrio.checked == true) {
+            myTodo.priority = 'medium';
+        } else {
+            myTodo.priority = 'high';
+        }
+
+        createTodo.todoList[todoIndex] = myTodo;
     }
 
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
@@ -239,7 +269,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
 
 
-    return {createToDoCard}
+    return {createToDoCard, confirmEditBtn}
 })();
 
 
