@@ -41,6 +41,7 @@ export const mainContent = (() => {     // this module handles everything relate
         editDiv.classList.add('editBtn');
         const editBtnImg = new Image();
         editBtnImg.src = editSVG;
+        editBtnImg.classList.add('editBtnImg');
         editDiv.append(editBtnImg);
 
         const deleteDiv = document.createElement('div');
@@ -161,6 +162,14 @@ export const mainContent = (() => {     // this module handles everything relate
 
     function getTodoCardID(element) {              // this function will find and return the formatted id of the todo card depending on what child elements of todo card are clicked
 
+        if (element.classList.contains('deleteBtnImg') || element.classList.contains('editBtnImg')) {
+            let container = element.parentNode;
+            let mainInfo = container.parentNode;
+            let myTodoCard = mainInfo.parentNode;
+            let todoID = Number((myTodoCard.id).substring(4));
+            
+            return todoID;
+        }
         let deleteContainer = element.parentNode;
         let mainInfo = deleteContainer.parentNode;
         let myTodoCard = mainInfo.parentNode;
