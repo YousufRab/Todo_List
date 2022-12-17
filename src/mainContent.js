@@ -140,14 +140,11 @@ export const mainContent = (() => {     // this module handles everything relate
     }
 
     function deleteBtn() {          // this function will be called when TodoCard delete icon is clicked
-        let clickedElement = this;
 
-        let deleteContainer = this.parentNode;
-        let mainInfo = deleteContainer.parentNode;
-        let myTodoCard = mainInfo.parentNode;
+        let myTodoCard = targetTodoCard(this);
         (myTodoCard.parentNode).removeChild(myTodoCard);   // delete the displayed todo card
 
-        let todoID = getTodoCardID(clickedElement);
+        let todoID = getTodoCardID(this);
 
         let myTodo = createTodo.todoList.find((object) => {     // find the specific to-do object from the todoList array
             return object.id == todoID;
@@ -169,18 +166,33 @@ export const mainContent = (() => {     // this module handles everything relate
             let todoID = Number((myTodoCard.id).substring(4));
             
             return todoID;
+        } else {
+
+            let mainInfo = element.parentNode;
+            let myTodoCard = mainInfo.parentNode;
+            let todoID = Number((myTodoCard.id).substring(4));
+            
+            return todoID;
         }
-        let deleteContainer = element.parentNode;
-        let mainInfo = deleteContainer.parentNode;
-        let myTodoCard = mainInfo.parentNode;
-        let todoID = Number((myTodoCard.id).substring(4));
-        
-        return todoID;
     }
 
     function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
 
+        if (element.classList.contains('deleteBtnImg') || element.classList.contains('editBtnImg')) {
 
+            let container = element.parentNode;
+            let mainInfo = container.parentNode;
+            let myTodoCard = mainInfo.parentNode;
+            
+            return myTodoCard;
+
+        } else {
+
+            let mainInfo = element.parentNode;
+            let myTodoCard = mainInfo.parentNode;
+
+            return myTodoCard;
+        }
     }
 
     return {createToDoCard}
