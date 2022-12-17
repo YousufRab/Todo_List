@@ -6,8 +6,12 @@ import { createTodo } from './createTodo';
 const homeContent = document.querySelector('#homeContent');
 //temporarily add input form to Dom
 homeContent.append(createTodo.todoForm());
+//
+
 
 homeContent.append(pageContent());
+let confirmEditBtn = document.getElementById('conEditBtn');
+confirmEditBtn.addEventListener('click', mainContent.confirmEditBtn);
 
 
 
