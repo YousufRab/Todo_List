@@ -42,6 +42,7 @@ export const mainContent = (() => {     // this module handles everything relate
         const editBtnImg = new Image();
         editBtnImg.src = editSVG;
         editBtnImg.classList.add('editBtnImg');
+        editBtnImg.addEventListener('click', editBtn);
         editDiv.append(editBtnImg);
 
         const deleteDiv = document.createElement('div');
@@ -158,7 +159,33 @@ export const mainContent = (() => {     // this module handles everything relate
     function editBtn() {
 
         let editTodoId = getTodoCardID(this);
+        let myTodo = findTodo(editTodoId);
 
+        displayToEdit(myTodo);
+
+        function displayToEdit(Object) {
+
+            const proName = document.getElementById('proName');
+            proName.innerHTML = Object.title;
+
+            const description = document.getElementById('descriptionEdit');
+            description.innerText = Object.description;
+
+            const date = document.getElementById('editDate');
+            date.value = Object.date;
+
+            const lowPrio = document.getElementById('lowPrioEdit');
+            const medPrio = document.getElementById('medPrioEdit');
+            const highPrio = document.getElementById('highPrioEdit');
+
+            if (Object.priority == 'low') {
+                lowPrio.checked = true;
+            } else if (Object.priority == 'medium') {
+                medPrio.checked = true;
+            } else {
+                highPrio.checked = true;
+            }
+        }
 
     }
 
