@@ -161,22 +161,23 @@ export const mainContent = (() => {     // this module handles everything relate
         let editTodoId = getTodoCardID(this);
         let myTodo = findTodo(editTodoId);
 
+        // First target all the elements in the edit form
+        const proName = document.getElementById('proName');
+        const description = document.getElementById('descriptionEdit');
+        const date = document.getElementById('editDate');
+        const lowPrio = document.getElementById('lowPrioEdit');
+        const medPrio = document.getElementById('medPrioEdit');
+        const highPrio = document.getElementById('highPrioEdit');
+
         displayToEdit(myTodo);
 
-        function displayToEdit(Object) {
+        function displayToEdit(Object) {        // Accepts object input and displays properties to edit form
 
-            const proName = document.getElementById('proName');
             proName.innerHTML = Object.title;
 
-            const description = document.getElementById('descriptionEdit');
             description.innerText = Object.description;
 
-            const date = document.getElementById('editDate');
             date.value = Object.date;
-
-            const lowPrio = document.getElementById('lowPrioEdit');
-            const medPrio = document.getElementById('medPrioEdit');
-            const highPrio = document.getElementById('highPrioEdit');
 
             if (Object.priority == 'low') {
                 lowPrio.checked = true;
