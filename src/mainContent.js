@@ -146,15 +146,29 @@ export const mainContent = (() => {     // this module handles everything relate
 
         let todoID = getTodoCardID(this);
 
-        let myTodo = createTodo.todoList.find((object) => {     // find the specific to-do object from the todoList array
-            return object.id == todoID;
-        });
+        let myTodo = findTodo(todoID);
 
         for (var i = createTodo.todoList.length - 1; i >= 0; i--) {     // loop through the to do list array and delete the specific to-do element based on id
             if (createTodo.todoList[i].id == myTodo.id) {
                 createTodo.todoList.splice(i, 1);
             }
         }
+    }
+
+    function editBtn() {
+
+        let editTodoId = getTodoCardID(this);
+
+
+    }
+
+    function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
+
+        let myTodo = createTodo.todoList.find((object) => {
+            return object.id == todoID;
+        })
+
+        return myTodo;
     }
 
     function getTodoCardID(element) {              // this function will find and return the formatted id of the todo card depending on what child elements of todo card are clicked
@@ -194,6 +208,8 @@ export const mainContent = (() => {     // this module handles everything relate
             return myTodoCard;
         }
     }
+
+
 
     return {createToDoCard}
 })();
