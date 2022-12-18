@@ -260,6 +260,7 @@ export const mainContent = (() => {     // this module handles everything relate
         let todoId = getTodoCardID(this);
         let myTodo = findTodo(todoId);
 
+        switchOverlay();
         displayDetails(myTodo);
     
     }
@@ -312,6 +313,20 @@ export const mainContent = (() => {     // this module handles everything relate
             
             return todoID;
         }
+    }
+
+    function switchOverlay() {          // changes display settings of overlay element
+
+        let overlay = document.getElementById('overlay');
+        
+        if (overlay.classList.contains('overlayHidden')) {
+            overlay.classList.add('overlayVisible');
+            overlay.classList.remove('overlayHidden');
+        } else {
+            overlay.classList.add('overlayHidden');
+            overlay.classList.remove('overlayVisible');
+        }
+
     }
 
     function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
