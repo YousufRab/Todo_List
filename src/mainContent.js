@@ -176,7 +176,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         function displayToEdit(Object) {        // Accepts object input and displays properties to edit form
 
-            proName.innerText = Object.title;
+            proName.value = Object.title;
 
             description.innerText = Object.description;
 
@@ -207,7 +207,7 @@ export const mainContent = (() => {     // this module handles everything relate
         const todoIndex = createTodo.todoList.indexOf(myTodo);
 
         // Modify to do object values
-        myTodo.title = proName.innerHTML;
+        myTodo.title = proName.value;
         myTodo.description = description.value;
         myTodo.date = date.value;
         
