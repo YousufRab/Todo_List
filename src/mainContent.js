@@ -255,7 +255,30 @@ export const mainContent = (() => {     // this module handles everything relate
     }
 
     function detailsBtn() {                 // Called when details btn is clicked
+       
+        let todoId = getTodoCardID(this);
+        let myTodo = findTodo(todoId);
 
+        displayDetails(myTodo);
+    
+    }
+
+    function displayDetails(todo) {         // Accepts to do object and displays its details to details html elements
+    
+        let title = document.getElementById('detailsTitle');
+        title.innerHTML = todo.title;
+
+        let project = document.getElementById('detailsProject');
+        project.innerHTML = todo.project;
+
+        let priority = document.getElementById('detailsPriority');
+        priority.innerHTML = (todo.priority).toUpperCase;
+
+        let dueDate = document.getElementById('detailsDate');
+        dueDate.innerHTML = todo.date;
+
+        let description = document.getElementById('detailsDescription');
+        description.innerHTML = todo.description;
     }
 
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
