@@ -223,6 +223,16 @@ export const mainContent = (() => {     // this module handles everything relate
         console.log(createTodo.todoList);
     }
 
+    function changeTodoCardDisplay() {          // this is called inside confirmEditBtn to display the changes made in the edit form to the todocard
+
+        // First target the relevent todoCard element using the currentTodoID variable
+        let todoCardID = 'todo' + currentTodoID;
+        let myTodoCard = document.getElementById(todoCardID);
+        
+
+
+    }
+
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
 
         let myTodo = createTodo.todoList.find((object) => {
