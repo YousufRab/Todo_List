@@ -227,10 +227,8 @@ export const mainContent = (() => {     // this module handles everything relate
     function changeTodoCardDisplay() {          // this is called inside confirmEditBtn to display the changes made in the edit form to the todocard
 
         const proName = document.getElementById('proName');
-        const date = document.getElementById('editDate');
         const lowPrio = document.getElementById('lowPrioEdit');
         const medPrio = document.getElementById('medPrioEdit');
-        const highPrio = document.getElementById('highPrioEdit');
 
         // First target the relevent todoCard element using the currentTodoID variable
         let todoCardID = 'todo' + currentTodoID;
@@ -253,6 +251,10 @@ export const mainContent = (() => {     // this module handles everything relate
         // Since we need date in a different string format, we will use findTodo function to find the relevant todo object and pass it in to dateToString function
         let myTodo = findTodo(currentTodoID);
         dateElement.innerHTML = dateToString(myTodo);
+
+    }
+
+    function detailsBtn() {                 // Called when details btn is clicked
 
     }
 
