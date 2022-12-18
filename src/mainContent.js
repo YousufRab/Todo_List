@@ -204,8 +204,6 @@ export const mainContent = (() => {     // this module handles everything relate
         const medPrio = document.getElementById('medPrioEdit');
         const highPrio = document.getElementById('highPrioEdit');
 
-        const todoIndex = createTodo.todoList.indexOf(myTodo);
-
         // Modify to do object values
         myTodo.title = proName.value;
         myTodo.description = description.value;
@@ -219,7 +217,9 @@ export const mainContent = (() => {     // this module handles everything relate
             myTodo.priority = 'high';
         }
 
+        const todoIndex = createTodo.todoList.indexOf(myTodo);
         createTodo.todoList[todoIndex] = myTodo;
+        currentTodoID = 0;              // Reset this variable
         console.log(createTodo.todoList);
     }
 
