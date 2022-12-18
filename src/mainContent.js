@@ -219,17 +219,40 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const todoIndex = createTodo.todoList.indexOf(myTodo);
         createTodo.todoList[todoIndex] = myTodo;
+        changeTodoCardDisplay();                                // changeTodoCardDisplay function goes here
         currentTodoID = 0;              // Reset this variable
         console.log(createTodo.todoList);
     }
 
     function changeTodoCardDisplay() {          // this is called inside confirmEditBtn to display the changes made in the edit form to the todocard
 
+        const proName = document.getElementById('proName');
+        const date = document.getElementById('editDate');
+        const lowPrio = document.getElementById('lowPrioEdit');
+        const medPrio = document.getElementById('medPrioEdit');
+        const highPrio = document.getElementById('highPrioEdit');
+
         // First target the relevent todoCard element using the currentTodoID variable
         let todoCardID = 'todo' + currentTodoID;
         let myTodoCard = document.getElementById(todoCardID);
-        
 
+        if (lowPrio.checked == true) {                          
+            myTodoCard.style.backgroundColor = 'rgb(0, 231, 39)';
+        } else if (medPrio.checked == true) {
+            myTodoCard.style.backgroundColor = 'rgb(255, 255, 0)';
+        } else {
+            myTodoCard.style.backgroundColor = 'rgb(255, 0, 0)';
+        }
+
+        let mainInfoElement = myTodoCard.children[0];
+        let nameElement = mainInfoElement.children[1];
+        let dateElement = mainInfoElement.children[3];
+
+        nameElement.innerHTML = proName.value;
+
+        // Since we need date in a different string format, we will use findTodo function to find the relevant todo object and pass it in to dateToString function
+        let myTodo = findTodo(currentTodoID);
+        dateElement.innerHTML = dateToString(myTodo);
 
     }
 
@@ -237,7 +260,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         let myTodo = createTodo.todoList.find((object) => {
             return object.id == todoID;
-        })
+        });
 
         return myTodo;
     }
