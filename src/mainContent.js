@@ -28,6 +28,7 @@ export const mainContent = (() => {     // this module handles everything relate
         const details = document.createElement('div');
         details.classList.add('detailsBtn');
         details.innerHTML = 'Details';
+        details.addEventListener('click', detailsBtn);
 
         const description = document.createElement('p');
         description.classList.add('todo-Description');
@@ -269,10 +270,14 @@ export const mainContent = (() => {     // this module handles everything relate
         title.innerHTML = todo.title;
 
         let project = document.getElementById('detailsProject');
-        project.innerHTML = todo.project;
-
+        if (todo.project === undefined) {
+            project.innerHTML = "";
+        } else {
+            project.innerHTML = todo.project;
+        }
+        
         let priority = document.getElementById('detailsPriority');
-        priority.innerHTML = (todo.priority).toUpperCase;
+        priority.innerHTML = (todo.priority).toUpperCase();
 
         let dueDate = document.getElementById('detailsDate');
         dueDate.innerHTML = todo.date;
