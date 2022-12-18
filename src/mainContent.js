@@ -156,9 +156,12 @@ export const mainContent = (() => {     // this module handles everything relate
         }
     }
 
+    let currentTodoID = 0;          // This variable will be used to hold the ID of the current todo displayed in edit form
+
     function editBtn() {
 
         let editTodoId = getTodoCardID(this);
+        currentTodoID = editTodoId;     //Sets the currentTodoID so it can be used in confirmEditBtn function
         let myTodo = findTodo(editTodoId);
 
         // First target all the elements in the edit form
@@ -191,9 +194,8 @@ export const mainContent = (() => {     // this module handles everything relate
 
     function confirmEditBtn() {             // Called when confirm Edit button is clicked
 
-        let editTodoId = getTodoCardID(this); // FIX THIS THE PROBLEM IS HERE
+        let editTodoId = currentTodoID; 
         let myTodo = findTodo(editTodoId);
-        console.log(myTodo);
 
         const proName = document.getElementById('proName');
         const description = document.getElementById('descriptionEdit');
@@ -205,7 +207,7 @@ export const mainContent = (() => {     // this module handles everything relate
         const todoIndex = createTodo.todoList.indexOf(myTodo);
 
         // Modify to do object values
-        myTodo.title = proName.innerText;
+        myTodo.title = proName.innerHTML;
         myTodo.description = description.innerText;
         myTodo.date = date.value;
         
@@ -218,6 +220,7 @@ export const mainContent = (() => {     // this module handles everything relate
         }
 
         createTodo.todoList[todoIndex] = myTodo;
+        console.log(createTodo.todoList);
     }
 
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
