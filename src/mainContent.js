@@ -208,7 +208,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         // Modify to do object values
         myTodo.title = proName.innerHTML;
-        myTodo.description = description.innerText;
+        myTodo.description = description.value;
         myTodo.date = date.value;
         
         if (lowPrio.checked == true) {
