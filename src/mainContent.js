@@ -297,9 +297,8 @@ export const mainContent = (() => {     // this module handles everything relate
             detailsPopUp.classList.remove('detailsHidden');
         } else {
             detailsPopUp.classList.add('detailsHidden');
-            detailsPopUp.classList.remove('detailsVisible')
+            detailsPopUp.classList.remove('detailsVisible');
         }
-
     }
 
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
@@ -343,7 +342,7 @@ export const mainContent = (() => {     // this module handles everything relate
         }
 
         // Add more code for hiding details, edit form and create todo/project forms
-        
+
     }
 
     function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
@@ -367,7 +366,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
 
 
-    return {createToDoCard, confirmEditBtn, switchOverlay}
+    return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch}
 })();
 
 
