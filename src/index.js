@@ -13,6 +13,8 @@ homeContent.append(pageContent());
 let confirmEditBtn = document.getElementById('conEditBtn');
 confirmEditBtn.addEventListener('click', mainContent.confirmEditBtn);
 
+let overlay = document.getElementById('overlay');
+overlay.addEventListener('click', mainContent.switchOverlay);
 
 
 
