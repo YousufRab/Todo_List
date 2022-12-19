@@ -10,7 +10,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.45);
+    background-color: rgba(0,0,0,0.6);
     z-index: 2;
 }
 
@@ -178,10 +178,20 @@ fieldset {
 #detailsContainer {
     background-color: azure;
     position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 40%;
+    transform-origin: 50% 50%;
+    transition: visibility 0s 0.5s, transform 0.5s ease-in-out;
     z-index: 3;
+}
+
+.detailsVisible {
+    transform: scale(1);
+    visibility: visible;
+}
+
+.detailsHidden {
+    transform: scale(0);
 }
 
 #detailsContainer > div {
