@@ -260,6 +260,7 @@ export const mainContent = (() => {     // this module handles everything relate
         let todoId = getTodoCardID(this);
         let myTodo = findTodo(todoId);
 
+        showDetailsSwitch();
         switchOverlay();
         displayDetails(myTodo);
     
@@ -285,6 +286,20 @@ export const mainContent = (() => {     // this module handles everything relate
 
         let description = document.getElementById('detailsDescription');
         description.innerHTML = todo.description;
+    }
+
+    function showDetailsSwitch() {            // Handles the details element appearance
+
+        let detailsPopUp = document.getElementById('detailsContainer');
+
+        if (detailsPopUp.classList.contains('detailsHidden')) {
+            detailsPopUp.classList.add('detailsVisible');
+            detailsPopUp.classList.remove('detailsHidden');
+        } else {
+            detailsPopUp.classList.add('detailsHidden');
+            detailsPopUp.classList.remove('detailsVisible')
+        }
+
     }
 
     function findTodo(todoID) {         //this function takes todoId as input and searches the to do list array for the todo object and returns it
@@ -327,6 +342,8 @@ export const mainContent = (() => {     // this module handles everything relate
             overlay.classList.remove('overlayVisible');
         }
 
+        // Add more code for hiding details, edit form and create todo/project forms
+        
     }
 
     function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
@@ -350,7 +367,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
 
 
-    return {createToDoCard, confirmEditBtn}
+    return {createToDoCard, confirmEditBtn, switchOverlay}
 })();
 
 
