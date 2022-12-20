@@ -308,5 +308,5 @@ export const createTodo = (() => { // this module handles everything related to 
         switchForm();
     } 
 
-    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch};
+    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm};
 })();
