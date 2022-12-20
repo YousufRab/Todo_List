@@ -59,7 +59,7 @@ body {
     margin-top: 8px;
 }
 
-#header {
+#headerContainer {
     grid-column: 1/-1;
 }
 
