@@ -37,7 +37,8 @@ export const createTodo = (() => { // this module handles everything related to 
         inputTitle.classList.add('inputTitle');
         inputTitle.innerHTML = "Create new...";
         const closeInput = document.createElement('div');
-        closeInput.classList.add('closeInput');
+        closeInput.id = 'closeInput';
+        closeInput.classList.add('closePopup');
         closeInput.innerHTML = "X";
 
         inputHeader.append(inputTitle, closeInput); //append this to inputContainer
