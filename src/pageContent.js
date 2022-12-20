@@ -1,4 +1,5 @@
 import { add } from "date-fns";
+import notesSVG from './notes.svg';
 import { createTodo } from "./createTodo";
 import { mainContent } from "./mainContent";
 
@@ -7,9 +8,18 @@ export function pageContent() {
     const container = document.createElement('div');
     container.id = 'container';
 
+    const headerContainer = document.createElement('div');
+    headerContainer.id = 'headerContainer';
+
     const header = document.createElement('div');
     header.id = 'header';
     header.innerHTML = 'To do List';
+
+    const notesImg = new Image();
+    notesImg.src = notesSVG;
+    notesImg.id = 'notesImg';
+
+    headerContainer.append(header, notesImg);
 
     const sideBar = document.createElement('div');
     sideBar.id = 'sideBar';
@@ -34,7 +44,7 @@ export function pageContent() {
 
     content.append(upperContent, addTodoContainer);
 
-    container.append(header, sideBar, content);
+    container.append(headerContainer, sideBar, content);
 
     // Create sidebar links
 
@@ -64,12 +74,11 @@ export function pageContent() {
     const newProject = document.createElement('div');
     newProject.id = 'newProjectBtn';
     newProject.innerHTML = 'Add New Project';
-    newProject.addEventListener('click', ()=> {
+    newProject.addEventListener('click', () => {
         mainContent.switchOverlay();
         createTodo.inputContainerSwitch();
         createTodo.switchForm();
     });
-
 
     sideBar.append(homeLink, todayLink, weekLink, projectLink, newProject);
 
