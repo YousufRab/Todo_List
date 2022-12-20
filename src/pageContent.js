@@ -63,7 +63,12 @@ export function pageContent() {
 
     const newProject = document.createElement('div');
     newProject.id = 'newProjectBtn';
-    newProject.innerHTML = 'Add Project';
+    newProject.innerHTML = 'Add New Project';
+    newProject.addEventListener('click', ()=> {
+        mainContent.switchOverlay();
+        createTodo.inputContainerSwitch();
+        createTodo.switchForm();
+    });
 
 
     sideBar.append(homeLink, todayLink, weekLink, projectLink, newProject);
