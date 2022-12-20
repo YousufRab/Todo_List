@@ -73,6 +73,7 @@ export function pageContent() {
 
     const newProject = document.createElement('div');
     newProject.id = 'newProjectBtn';
+    newProject.classList.add('hvr-pulse');
     newProject.innerHTML = 'Add New Project';
     newProject.addEventListener('click', () => {
         mainContent.switchOverlay();
