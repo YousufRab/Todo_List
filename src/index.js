@@ -19,7 +19,7 @@ let detailsContainer = document.getElementById('detailsContainer');
 let editContainer = document.getElementById('editContainer');
 let overlay = document.getElementById('overlay');
 
-overlay.addEventListener('click', ()=> {
+overlay.addEventListener('click', () => {
     mainContent.switchOverlay();
     if (detailsContainer.classList.contains('detailsVisible')) {
         mainContent.showDetailsSwitch();
@@ -35,7 +35,11 @@ closeDetails.addEventListener('click', () => {
     mainContent.showDetailsSwitch();
 });
 
-
+let closeEdit = document.getElementById('editCancel');
+closeEdit.addEventListener('click', () => {
+    mainContent.switchOverlay();
+    mainContent.editContainerSwitch();
+});
 
 
 
