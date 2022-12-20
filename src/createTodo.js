@@ -40,6 +40,10 @@ export const createTodo = (() => { // this module handles everything related to 
         closeInput.id = 'closeInput';
         closeInput.classList.add('closePopup');
         closeInput.innerHTML = "X";
+        closeInput.addEventListener('click', () => {
+            inputContainerSwitch();
+            mainContent.switchOverlay();
+        });
 
         inputHeader.append(inputTitle, closeInput); //append this to inputContainer
 
