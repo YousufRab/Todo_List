@@ -39,6 +39,7 @@ let closeEdit = document.getElementById('editCancel');
 closeEdit.addEventListener('click', () => {
     mainContent.switchOverlay();
     mainContent.editContainerSwitch();
+    mainContent.clearEditForm();
 });
 
 
