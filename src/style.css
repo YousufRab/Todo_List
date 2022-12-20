@@ -55,7 +55,6 @@ body {
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(255, 249, 242);
     display: grid;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1.2fr 4fr;
@@ -89,6 +88,9 @@ body {
     align-items: center;
     padding-top: 12px;
     padding-bottom: 12px;
+    background-color: #f16775;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
 }
 
 #header {
@@ -99,14 +101,15 @@ body {
 }
 
 #sideBar {
-    background-color: aquamarine;
+    background-color: #373e98;
     font-family: 'Roboto';
     font-weight: 500;
     border-bottom-left-radius: 18px;
+    color: #dac120;
 }
 
 #content {
-    background-color: rgb(192, 196, 0);
+    background-color: #fee36e;
     display: flex;
     flex-direction: column;
     overflow:auto;
@@ -276,3 +279,44 @@ fieldset > div {
     justify-content: space-between;
 }
 
+/* For creating hover pulse effect */
+
+@-webkit-keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  @keyframes hvr-pulse {
+    25% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    75% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+  }
+  .hvr-pulse {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+  .hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+    text-decoration: underline;
+    cursor: pointer;
+    -webkit-animation-name: hvr-pulse;
+    animation-name: hvr-pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  }
