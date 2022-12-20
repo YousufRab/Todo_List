@@ -100,6 +100,15 @@ body {
     display: grid;
     grid-template-rows: 1fr 3fr;
     grid-template-columns: 1fr 3fr;
+    position: absolute;
+    top: 35%;
+    bottom: 35%;
+    left: 10%;
+    right: 10%;
+    transform-origin: 50% 50%;
+    transition: visibility 0s 0.5s, transform 0.5s ease-in-out;
+    z-index: 3;
+
 }
 
 .inputHeader {
@@ -212,13 +221,13 @@ fieldset > div {
     z-index: 3;
 }
 
-.detailsVisible, .editContainer-visible {
+.detailsVisible, .editContainer-visible, .inputContainer-visible {
     transform: scale(1);
     visibility: visible;
     opacity: 1;
 }
 
-.detailsHidden, .editContainer-hidden {
+.detailsHidden, .editContainer-hidden, .inputContainer-hidden {
     transform: scale(0);
     opacity: 0;
 }
