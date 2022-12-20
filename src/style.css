@@ -93,7 +93,9 @@ body {
     width: 36px;
 }
 
-.inputContainer {
+/* This section handles create new to do/project form */
+
+#inputContainer {
     background-color: azure;
     display: grid;
     grid-template-rows: 1fr 3fr;
@@ -127,6 +129,15 @@ fieldset {
     flex-direction: column;
 }
 
+fieldset > div > label {
+    display: block;
+}
+
+fieldset > div {
+    display: flex;
+    justify-content: space-between;
+}
+
 #addTodoBtn {
     text-align: center;
     margin-top: 5px;
@@ -144,6 +155,18 @@ fieldset {
  /* All Edit Container related CSS properties */
 #editContainer {
     background-color: bisque;
+    position: absolute;
+    min-width: 475px;
+    width: 30vw;
+    min-height: 220px;
+    height: 25vh;
+    top: 40%;
+    bottom: 40%;
+    left: 35%;
+    right: 40%;
+    transform-origin: 50% 50%;
+    transition: visibility 0s 0.5s, transform 0.5s ease-in-out;
+    z-index: 3;
 }
 
 #proNameContainer {
@@ -178,6 +201,8 @@ fieldset {
 #detailsContainer {
     background-color: azure;
     position: absolute;
+    height: 20vh;
+    width: 30vw;
     top: 40%;
     bottom: 40%;
     left: 40%;
@@ -187,13 +212,13 @@ fieldset {
     z-index: 3;
 }
 
-.detailsVisible {
+.detailsVisible, .editContainer-visible {
     transform: scale(1);
     visibility: visible;
     opacity: 1;
 }
 
-.detailsHidden {
+.detailsHidden, .editContainer-hidden {
     transform: scale(0);
     opacity: 0;
 }
@@ -202,3 +227,4 @@ fieldset {
     display: flex;
     justify-content: space-between;
 }
+
