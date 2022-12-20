@@ -181,7 +181,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
             proName.value = Object.title;
 
-            description.innerText = Object.description;
+            description.value = Object.description;
 
             date.value = Object.date;
 
@@ -260,8 +260,8 @@ export const mainContent = (() => {     // this module handles everything relate
     }
 
     function clearEditForm(){
-        document.getElementById('proName') = '';
-        document.getElementById('descriptionEdit') = '';
+        document.getElementById('proName').value = '';
+        document.getElementById('descriptionEdit').value = '';
         document.getElementById('editDate').value = '';
         document.getElementById('lowPrioEdit').checked = false;
         document.getElementById('medPrioEdit').checked = false;
@@ -389,8 +389,6 @@ export const mainContent = (() => {     // this module handles everything relate
             return myTodoCard;
         }
     }
-
-
 
     return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch, clearEditForm}
 })();
