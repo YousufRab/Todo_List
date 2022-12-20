@@ -161,6 +161,8 @@ export const mainContent = (() => {     // this module handles everything relate
 
     function editBtn() {
 
+        editContainerSwitch();
+        switchOverlay();
         let editTodoId = getTodoCardID(this);
         currentTodoID = editTodoId;     //Sets the currentTodoID so it can be used in confirmEditBtn function
         let myTodo = findTodo(editTodoId);
@@ -252,6 +254,19 @@ export const mainContent = (() => {     // this module handles everything relate
         // Since we need date in a different string format, we will use findTodo function to find the relevant todo object and pass it in to dateToString function
         let myTodo = findTodo(currentTodoID);
         dateElement.innerHTML = dateToString(myTodo);
+
+    }
+
+    function editContainerSwitch() {         // For appearance and hiding of edit form
+
+        let editContainer = document.getElementById('editContainer');
+        if (editContainer.classList.contains('editContainer-hidden')) {
+            editContainer.classList.add('editContainer-visible');
+            editContainer.classList.remove('editContainer-hidden');
+        } else {
+            editContainer.classList.remove('editContainer-visible');
+            editContainer.classList.add('editContainer-hidden');
+        }
 
     }
 
