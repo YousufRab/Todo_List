@@ -43,6 +43,10 @@ export const createTodo = (() => { // this module handles everything related to 
         closeInput.addEventListener('click', () => {
             inputContainerSwitch();
             mainContent.switchOverlay();
+            const formContainer = document.querySelector('#formContainer');
+            if (formContainer.style.display == 'none') {
+                switchForm();
+            };
         });
 
         inputHeader.append(inputTitle, closeInput); //append this to inputContainer
