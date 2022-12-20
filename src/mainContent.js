@@ -259,6 +259,15 @@ export const mainContent = (() => {     // this module handles everything relate
 
     }
 
+    function clearEditForm(){
+        document.getElementById('proName') = '';
+        document.getElementById('descriptionEdit') = '';
+        document.getElementById('editDate').value = '';
+        document.getElementById('lowPrioEdit').checked = false;
+        document.getElementById('medPrioEdit').checked = false;
+        document.getElementById('highPrioEdit').checked = false;
+    }
+
     function editContainerSwitch() {         // For appearance and hiding of edit form
 
         let editContainer = document.getElementById('editContainer');
@@ -383,7 +392,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
 
 
-    return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch}
+    return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch, clearEditForm}
 })();
 
 
