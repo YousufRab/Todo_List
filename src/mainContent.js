@@ -381,7 +381,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
 
 
-    return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch}
+    return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch}
 })();
 
 
