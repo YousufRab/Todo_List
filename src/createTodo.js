@@ -27,7 +27,8 @@ export const createTodo = (() => { // this module handles everything related to 
     function todoForm() {
 
         const inputContainer = document.createElement('div');
-        inputContainer.classList.add('inputContainer');
+        inputContainer.id= 'inputContainer';
+        inputContainer.classList.add('inputContainer-hidden');
 
         const inputHeader = document.createElement('div');
         inputHeader.classList.add('inputHeader');
@@ -264,6 +265,18 @@ export const createTodo = (() => { // this module handles everything related to 
         } else {
             formContainer.style.display = 'block';
             projectform.style.display = 'none';
+        }
+    }
+
+    function inputContainerSwitch() {           // Toggles display of input container
+
+        let inputContainer = document.getElementById('inputContainer');
+        if (inputContainer.classList.contains('inputContainer-hidden')) {
+            inputContainer.classList.add('inputContainer-visible');
+            inputContainer.classList.remove('inputContainer-hidden');
+        } else {
+            inputContainer.classList.add('inputContainer-hidden');
+            inputContainer.classList.remove('inputContainer-visible');
         }
     }
 
