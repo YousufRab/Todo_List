@@ -20,10 +20,14 @@ export function pageContent() {
     const upperContent = document.createElement('div');
     upperContent.id = 'upperContent';
 
-
     const addTodo = document.createElement('button');
     addTodo.innerHTML = 'ADD TO DO';
+    addTodo.setAttribute('type', 'button');
     addTodo.id = 'addTodo-content';
+    addTodo.addEventListener('click', () => {
+        createTodo.inputContainerSwitch();
+        mainContent.switchOverlay();
+    });
     const addTodoContainer = document.createElement('div');
     addTodoContainer.id = 'addTodo-container';
     addTodoContainer.append(addTodo);
@@ -135,7 +139,7 @@ export const projects = (() => {    //Module for handling projects in sidebar
     }
 
     function addToProList (project) {
-        projectList.push(project);  
+    projectList.push(project);  
     }
 
     return {render, addToProList, createProject, projectList, lastProjectClicked};
