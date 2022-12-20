@@ -295,5 +295,5 @@ export const createTodo = (() => { // this module handles everything related to 
         document.querySelector('#projectNameInput').value = '';    // clear input
     } 
 
-    return {todoForm, collectFormInput, todoList, Todo};
+    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch};
 })();
