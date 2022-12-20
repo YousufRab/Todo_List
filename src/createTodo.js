@@ -303,6 +303,9 @@ export const createTodo = (() => { // this module handles everything related to 
         projects.render();
         console.log(projects.projectList);
         document.querySelector('#projectNameInput').value = '';    // clear input
+        mainContent.switchOverlay();
+        inputContainerSwitch();
+        switchForm();
     } 
 
     return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch};
