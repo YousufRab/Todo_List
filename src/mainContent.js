@@ -222,7 +222,9 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const todoIndex = createTodo.todoList.indexOf(myTodo);
         createTodo.todoList[todoIndex] = myTodo;
-        changeTodoCardDisplay();                                // changeTodoCardDisplay function goes here
+        changeTodoCardDisplay();
+        editContainerSwitch();
+        switchOverlay();                               
         currentTodoID = 0;              // Reset this variable
         console.log(createTodo.todoList);
     }
