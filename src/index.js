@@ -15,6 +15,7 @@ homeContent.append(pageContent());
 let confirmEditBtn = document.getElementById('conEditBtn');
 confirmEditBtn.addEventListener('click', mainContent.confirmEditBtn);
 
+let inputContainer = document.getElementById('inputContainer');
 let detailsContainer = document.getElementById('detailsContainer');
 let editContainer = document.getElementById('editContainer');
 let overlay = document.getElementById('overlay');
@@ -26,6 +27,9 @@ overlay.addEventListener('click', () => {
     };
     if (editContainer.classList.contains('editContainer-visible')) {
         mainContent.editContainerSwitch();
+    };
+    if (inputContainer.classList.contains('inputContainer-visible')) {
+        createTodo.inputContainerSwitch();
     };
 });
 
@@ -42,12 +46,3 @@ closeEdit.addEventListener('click', () => {
     mainContent.clearEditForm();
 });
 
-
-
-
-
-
-
-// watch these vids:
-// https://www.youtube.com/watch?v=W7FaYfuwu70&ab_channel=WebDevSimplified
-// https://www.youtube.com/watch?v=WgFkdGqC6ng&ab_channel=MiladTech
