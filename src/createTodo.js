@@ -235,9 +235,10 @@ export const createTodo = (() => { // this module handles everything related to 
 
     function addTodoBtnClicked() {
         const myTodo = createTodoObject();
-        console.log(myTodo); // this is just for testing purposes
         console.table(todoList);
         displayTodo(myTodo);
+        mainContent.switchOverlay();
+        inputContainerSwitch();
         clearForm();
     }
 
