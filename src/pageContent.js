@@ -35,8 +35,11 @@ export function pageContent() {
     addTodo.setAttribute('type', 'button');
     addTodo.id = 'addTodo-content';
     addTodo.addEventListener('click', () => {
-        createTodo.inputContainerSwitch();
         mainContent.switchOverlay();
+        createTodo.inputContainerSwitch();
+        if (document.getElementById('formContainer').style.display === 'none') {
+            createTodo.switchForm();
+        };
     });
     const addTodoContainer = document.createElement('div');
     addTodoContainer.id = 'addTodo-container';
