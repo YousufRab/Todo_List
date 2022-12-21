@@ -78,7 +78,9 @@ export function pageContent() {
     newProject.addEventListener('click', () => {
         mainContent.switchOverlay();
         createTodo.inputContainerSwitch();
-        createTodo.switchForm();
+        if (document.getElementById('projectForm').style.display === 'none') {
+            createTodo.switchForm();
+        };
     });
 
     sideBar.append(homeLink, todayLink, weekLink, projectLink, newProject);
