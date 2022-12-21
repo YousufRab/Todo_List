@@ -64,7 +64,7 @@ body {
 .sideBarLinks {
     margin-top: 12px;
     list-style-type: none;
-    background-image: url(./list-circle-outline.svg);
+    background-image: url(./bulletPoint.svg);
     background-repeat: no-repeat;
     background-size: 20px;
     padding-left: 2.6rem;
