@@ -221,7 +221,7 @@ fieldset > div {
     font-size: 1.1rem;
 }
 
-#todoTitle, #todoDescription {
+#todoTitle, #todoDescription  {
     width: 290px;
     border: none;
     border-radius: 8px;
@@ -233,10 +233,64 @@ fieldset > div {
 }
 
 #todoDate {
-    border: 1px solid rgb(61, 167, 0);
-    margin-right: 163px;
+    border: 3px solid rgb(61, 167, 0);
+    margin-right: 160px;
     border-radius: 6px;
     padding: 8px;
+}
+
+.prioDiv {
+    margin-top: -30px;
+}
+
+.prioDiv > p {
+    font-size: 1.1rem;
+    padding-left: 14px;
+    letter-spacing: 1.4px;
+    margin-bottom: 6px;
+}
+
+input[type=radio] {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 0px;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    width: 0px;
+    position: absolute;
+}
+
+#prioBtnContainer>label {
+    margin-left: 37px;
+    padding: 8px;
+    border: 2px solid;
+    display: inline-block;
+    width: 70px;
+    font-size: 0.8rem;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    transition: 0.4s all;
+}
+
+#prioBtnContainer>label:nth-child(2) {
+    border: 2px solid green;
+    color: green;
+}
+
+#prioBtnContainer>label:nth-child(2):hover {
+    border: 2px solid black;
+    background-color: green;
+    color: white;
+}
+
+#prioBtnContainer{
+    margin-left: 20px;
+} 
+
+#addTodoBtnContainer-Form {
+    margin-top: 12px;
 }
 
 #addTodoBtn {
