@@ -387,6 +387,7 @@ input[type=radio] {
 
 .detailsBtn {
     width: 68px;
+    cursor: pointer;
 }
 
 .todoDate {
@@ -394,9 +395,17 @@ input[type=radio] {
     text-align: center;
 }
 
+.editBtn {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    padding-top: 4px;
+}
+
 .deleteBtn {
     width: 36px;
-    color: white
+    padding-top: 8px;
+    cursor: pointer;
 }
 
  /* All Edit Container related CSS properties */
@@ -552,4 +561,23 @@ input[type=radio] {
     animation-timing-function: linear;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
+  }
+
+  /* Float */
+.hvr-float {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  .hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
   }
