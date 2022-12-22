@@ -53,18 +53,21 @@ export function pageContent() {
 
     const homeLink = document.createElement('li');
     homeLink.classList.add('sideBarLinks');
+    homeLink.classList.add('hvr-pulse');
     homeLink.id = 'homeLink';
     homeLink.innerHTML = 'Home';
     homeLink.addEventListener('click', sideBarLinks.homeBtn);
 
     const todayLink = document.createElement('li');
     todayLink.classList.add('sideBarLinks');
+    todayLink.classList.add('hvr-pulse');
     todayLink.id = 'todayLink';
     todayLink.innerHTML = 'Today';
     todayLink.addEventListener('click', sideBarLinks.todayBtn);
 
     const weekLink = document.createElement('li');
     weekLink.classList.add('sideBarLinks');
+    weekLink.classList.add('hvr-pulse');
     weekLink.id = 'weekLink';
     weekLink.innerHTML = 'This week';
     weekLink.addEventListener('click', sideBarLinks.weekBtn);
