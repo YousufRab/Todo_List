@@ -27,6 +27,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const details = document.createElement('div');
         details.classList.add('detailsBtn');
+        details.classList.add('hvr-pulse');
         details.innerHTML = 'Details';
         details.addEventListener('click', detailsBtn);
 
@@ -40,6 +41,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const editDiv = document.createElement('div');
         editDiv.classList.add('editBtn');
+        editDiv.classList.add('hvr-float');
         const editBtnImg = new Image();
         editBtnImg.src = editSVG;
         editBtnImg.classList.add('editBtnImg');
@@ -48,6 +50,7 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const deleteDiv = document.createElement('div');
         deleteDiv.classList.add('deleteBtn');
+        deleteDiv.classList.add('hvr-float');
         const deleteBtnImg = new Image();
         deleteBtnImg.src = deleteSVG;
         deleteBtnImg.classList.add('deleteBtnImg');
