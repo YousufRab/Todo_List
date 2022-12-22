@@ -141,6 +141,7 @@ export const projects = (() => {    //Module for handling projects in sidebar
                 const listElement = document.createElement('li');
                 listElement.classList.add('proList');
                 listElement.id = 'Project' + list.id; 
+                listElement.classList.add('hvr-pulse');
                 listElement.innerText = list.title;
                 listElement.addEventListener('click', projectClicked);
                 listContainer.appendChild(listElement);
@@ -151,6 +152,7 @@ export const projects = (() => {    //Module for handling projects in sidebar
                 if (!renderedProjects.includes(list)) {
                     const listElement = document.createElement('li');
                     listElement.classList.add('proList');
+                    listElement.classList.add('hvr-pulse');
                     listElement.id = 'Project' + list.id;
                     listElement.innerText = list.title;
                     listElement.addEventListener('click', projectClicked);
