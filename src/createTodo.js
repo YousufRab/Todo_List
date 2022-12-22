@@ -28,7 +28,7 @@ export const createTodo = (() => { // this module handles everything related to 
 
         const inputContainer = document.createElement('div');
         inputContainer.id= 'inputContainer';
-        inputContainer.classList.add('inputContainer-hidden');
+        inputContainer.classList.add('inputContainer-visible');          // CHANGE THIS TO 'inputContainer-hidden' when done with CSS
 
         const inputHeader = document.createElement('div');
         inputHeader.classList.add('inputHeader');
@@ -55,6 +55,7 @@ export const createTodo = (() => { // this module handles everything related to 
         inputSidebar.classList.add('inputSide');
         const sideTodo = document.createElement('div'); //add event click even listener to this 
         sideTodo.classList.add('sideTodo');
+        sideTodo.classList.add('hvr-pulse')
         sideTodo.innerHTML = 'To Do';
         sideTodo.addEventListener('click', () => {
             if (projectForm.style.display == 'block') {
@@ -64,6 +65,7 @@ export const createTodo = (() => { // this module handles everything related to 
 
         const sideProject = document.createElement('div'); //add event click even listener to this 
         sideProject.classList.add('sideProject');
+        sideProject.classList.add('hvr-pulse')
         sideProject.innerHTML = 'Project';
         sideProject.addEventListener('click', () => {
             if (formContainer.style.display == 'block') {
@@ -133,7 +135,7 @@ export const createTodo = (() => { // this module handles everything related to 
         lowPriority.classList.add('prioBtn');
         const lowLabel = document.createElement('label');
         lowLabel.setAttribute('for', 'lowPrio');
-        lowLabel.innerHTML = 'Low';
+        lowLabel.innerHTML = 'LOW';
 
         const medPriority = document.createElement('input');
         medPriority.setAttribute('type', 'radio');
@@ -142,7 +144,7 @@ export const createTodo = (() => { // this module handles everything related to 
         medPriority.classList.add('prioBtn');
         const medLabel = document.createElement('label');
         medLabel.setAttribute('for', 'medPrio');
-        medLabel.innerHTML = 'Medium';
+        medLabel.innerHTML = 'MEDIUM';
 
         const highPriority = document.createElement('input');
         highPriority.setAttribute('type', 'radio');
@@ -151,14 +153,15 @@ export const createTodo = (() => { // this module handles everything related to 
         highPriority.classList.add('prioBtn');
         const highLabel = document.createElement('label');
         highLabel.setAttribute('for', 'highPrio');
-        highLabel.innerHTML = 'High';
+        highLabel.innerHTML = 'HIGH';
 
         const addTodoBtnContainer = document.createElement('div');
         addTodoBtnContainer.id = 'addTodoBtnContainer-Form';
         const addTodoBtn = document.createElement('button');
-        addTodoBtn.innerHTML = 'ADD TO DO';
+        addTodoBtn.innerHTML = 'ADD TO LIST';
         addTodoBtn.setAttribute('type', 'button');
         addTodoBtn.id = 'addTodoBtn';
+        addTodoBtn.classList.add('hvr-radial-out')
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
         addTodoBtnContainer.append(addTodoBtn);
 
