@@ -28,7 +28,7 @@ export const createTodo = (() => { // this module handles everything related to 
 
         const inputContainer = document.createElement('div');
         inputContainer.id= 'inputContainer';
-        inputContainer.classList.add('inputContainer-visible');          // CHANGE THIS TO 'inputContainer-hidden' when done with CSS
+        inputContainer.classList.add('inputContainer-hidden');         
 
         const inputHeader = document.createElement('div');
         inputHeader.classList.add('inputHeader');
@@ -161,7 +161,7 @@ export const createTodo = (() => { // this module handles everything related to 
         addTodoBtn.innerHTML = 'ADD TO LIST';
         addTodoBtn.setAttribute('type', 'button');
         addTodoBtn.id = 'addTodoBtn';
-        addTodoBtn.classList.add('hvr-radial-out')
+        addTodoBtn.classList.add('hvr-push')
         addTodoBtn.addEventListener('click', addTodoBtnClicked);
         addTodoBtnContainer.append(addTodoBtn);
 
@@ -183,6 +183,7 @@ export const createTodo = (() => { // this module handles everything related to 
         const addProjectBtn = document.createElement('button');
         addProjectBtn.setAttribute('type', 'button');
         addProjectBtn.id = 'addProjectBtnForm';
+        addProjectBtn.classList.add('hvr-push');
         addProjectBtn.innerHTML = 'Create Project';
         addProjectBtn.addEventListener('click', createProjectBtnClicked);
 
