@@ -64,7 +64,7 @@ export const mainContent = (() => {     // this module handles everything relate
         if (todo.priority == 'low') {
             return 'rgb(0, 231, 39)';
         } else if (todo.priority == 'medium') {
-            return 'rgb(255, 255, 0)';
+            return 'rgb(255, 165, 0)';
         } else {
             return 'rgb(255, 0, 0)';
         }
