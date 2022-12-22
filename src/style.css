@@ -117,24 +117,9 @@ body {
     border-bottom-right-radius: 18px;
 }
 
-.mainInfo {
-    background-color: rgb(226, 226, 226);
-    color: rgb(255, 0, 0);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
-.todoCard {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
 
-.deleteBtn {
-    width: 36px;
-}
+
 
 /* This section handles create new to do/project form */
 
@@ -146,8 +131,7 @@ body {
     position: absolute;
     margin-top: 20vh;
     margin-left: 30vw;
-    max-width: 650px;
-    min-width: 580px;
+    width: 580px;
     height: 385px;
     transform-origin: 50% 50%;
     transition: visibility 0s 0.5s, transform 0.5s ease-in-out;
@@ -352,9 +336,8 @@ input[type=radio] {
 }
 
 #projectForm>label {
-    margin-left: 130px;
+    margin-left: 122px;
 }
-
 
 #projectNameInput {
     width: 370px;
@@ -364,7 +347,7 @@ input[type=radio] {
 }
 
 #addProjectBtnForm {
-    margin-left: 120px;
+    margin-left: 110px;
     margin-top: 14px;
     cursor: pointer;
     border: 2px solid #000000;
@@ -374,6 +357,47 @@ input[type=radio] {
 #addProjectBtnForm:hover {
     background-color: white; 
   }
+
+  /* This section is for todo card elements and add to button on main page (NOT in form) */
+
+.mainInfo {
+    background-color: #c7ddcc;
+    color: #a77b17;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Roboto';
+    height: 52px;
+}
+
+.todoCard {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+}
+
+.todoTitle {
+    width: 50px;
+    max-height: 52px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.detailsBtn {
+    width: 68px;
+}
+
+.todoDate {
+    width: 135px;
+    text-align: center;
+}
+
+.deleteBtn {
+    width: 36px;
+    color: white
+}
 
  /* All Edit Container related CSS properties */
 #editContainer {
