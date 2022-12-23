@@ -118,6 +118,10 @@ body {
     color: #dac120;
 }
 
+#sideBar > li:nth-child(1), #sideBar > li:nth-child(2)  {
+    display: block;
+}
+
 #content {
     background-color: #fee36e;
     display: flex;
