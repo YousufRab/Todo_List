@@ -31,7 +31,7 @@ export function pageContent() {
     upperContent.id = 'upperContent';
 
     const addTodo = document.createElement('button');
-    addTodo.innerHTML = 'ADD TO DO';
+    addTodo.innerHTML = 'ADD NEW TASK';
     addTodo.setAttribute('type', 'button');
     addTodo.id = 'addTodo-content';
     addTodo.classList.add('hvr-push');
