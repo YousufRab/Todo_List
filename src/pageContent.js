@@ -34,6 +34,7 @@ export function pageContent() {
     addTodo.innerHTML = 'ADD TO DO';
     addTodo.setAttribute('type', 'button');
     addTodo.id = 'addTodo-content';
+    addTodo.classList.add('hvr-push');
     addTodo.addEventListener('click', () => {
         mainContent.switchOverlay();
         createTodo.inputContainerSwitch();
