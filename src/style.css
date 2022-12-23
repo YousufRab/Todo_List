@@ -316,7 +316,7 @@ input[type=radio] {
     text-align: center;
 }
 
-#addTodoBtn, #addProjectBtnForm  {
+#addTodoBtn, #addProjectBtnForm, #addTodo-content {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -396,7 +396,8 @@ input[type="checkbox"] {
     position: relative;
     width: 1.3rem;
     height: 1.3rem;
-    border: 2px solid gray;
+    border: 2px solid green;
+    border-radius: 4px;
     vertical-align: -2px;
     color: green;
     background: white;
@@ -410,6 +411,7 @@ input[type="checkbox"]::before {
     right: -1px;
     top: -0.2em;
     visibility: hidden;
+
 }
 
 input[type="checkbox"]:checked::before {
@@ -526,6 +528,10 @@ input[type="checkbox"]:disabled {
 #detailsContainer > div {
     display: flex;
     justify-content: space-between;
+}
+
+#addTodo-content {
+    font-family: 'Roboto';
 }
 
 /* For creating hover pulse effect */
