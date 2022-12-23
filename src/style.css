@@ -391,6 +391,37 @@ input[type=radio] {
 
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid gray;
+    vertical-align: -2px;
+    color: green;
+    background: white;
+    transition: 0.3s all ease-in-out;
+}
+
+input[type="checkbox"]::before {
+    content: "✔";
+    position: absolute;
+    font-size: 1.4rem;
+    right: -1px;
+    top: -0.2em;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked::before {
+    visibility: visible;
+}
+
+input[type="checkbox"]:disabled {
+    border-color: black;
+    background: white;
+    color: gray;
+  }
+
 .todoTitle {
     width: 50px;
     max-height: 52px;
