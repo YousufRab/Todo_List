@@ -10,6 +10,7 @@ export const mainContent = (() => {     // this module handles everything relate
         const todoCard = document.createElement('div');
         todoCard.id = 'todo' + todo.id;
         todoCard.classList.add('todoCard');
+        todoCard.classList.add('hvr-float-shadow');
         todoCard.style.backgroundColor = prioLevel(todo);
 
         const mainInfo = document.createElement('div');
