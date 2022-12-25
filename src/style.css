@@ -427,15 +427,17 @@ input[type="checkbox"]:disabled {
   }
 
 .todoTitle {
-    width: 50px;
+    width: 300px;
     max-height: 52px;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
+    margin-left: 45px;
 }
 
 .detailsBtn {
     width: 68px;
     cursor: pointer;
+    margin-right: 30px;
 }
 
 .todoDate {
