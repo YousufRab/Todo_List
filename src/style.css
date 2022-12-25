@@ -74,10 +74,12 @@ body {
 
 #dataList {
     cursor: alias;
+    display: block;
 }
 
 #dataList > li {
     cursor: pointer;
+    display: block;
 }
 
 #newProjectBtn {
