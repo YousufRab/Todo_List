@@ -102,6 +102,7 @@ export const createTodo = (() => { // this module handles everything related to 
         descDiv.classList.add('descDiv');
         const descInput = document.createElement('input');
         descInput.setAttribute('type', 'text');
+        descInput.setAttribute('maxlength', '135');
         descInput.id = 'todoDescription';
         const descLabel = document.createElement('label');
         descLabel.classList.add('formLabel');
