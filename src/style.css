@@ -199,9 +199,21 @@ body {
 
 #closeInput {
     margin-right: 20px;
+    border: 2px solid transparent;
     font-family: 'Roboto';
+    padding-left: 8px;
+    padding-right: 8px;
     font-weight: 900;
     font-size: 1.8rem;
+    transition: 0.2s all ease-in-out;
+}
+
+#closeInput:hover {
+    border: 2px solid black;
+}
+
+#closeInput:active {
+    background-color: #c7ddcc;
 }
 
 fieldset {
