@@ -39,6 +39,7 @@ export const createTodo = (() => { // this module handles everything related to 
         const closeInput = document.createElement('div');
         closeInput.id = 'closeInput';
         closeInput.classList.add('closePopup');
+        closeInput.classList.add('hvr-float');
         closeInput.innerHTML = "X";
         closeInput.addEventListener('click', () => {
             inputContainerSwitch();
