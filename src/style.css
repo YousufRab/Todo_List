@@ -197,7 +197,7 @@ body {
     margin-top: 8px;
 }
 
-#closeInput {
+#closeInput, #closeDetails {
     margin-right: 20px;
     border: 2px solid transparent;
     font-family: 'Roboto';
@@ -208,11 +208,11 @@ body {
     transition: 0.2s all ease-in-out;
 }
 
-#closeInput:hover {
+#closeInput:hover, #closeDetails:hover {
     border: 2px solid black;
 }
 
-#closeInput:active {
+#closeInput:active, #closeDetails:active {
     background-color: #c7ddcc;
 }
 
@@ -546,6 +546,7 @@ input[type="checkbox"]:disabled {
     display: flex;
     justify-content: space-between;
 }
+
 
 #addTodo-content {
     font-family: 'Roboto';
