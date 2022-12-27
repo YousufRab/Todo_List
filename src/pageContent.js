@@ -174,9 +174,10 @@ export const projects = (() => {    //Module for handling projects in sidebar
 
 export const sideBarLinks = (() => {            //Module for handling sidebar functionality EXCEPT projects
 
-    let myTodoList = createTodo.todoList;    // import todo list from createTodo module
+    let myTodoList = createTodo.todoList;// import todo list from createTodo module
 
     function homeBtn() { // this should display all todos on todo list
+        let myTodoList = createTodo.todoList; 
         projects.lastProjectClicked.length = 0;
         clearTodos();
         renderTodos(myTodoList);
@@ -211,7 +212,8 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
     }
 
     function todayBtn() { //this should display todos based on date, if todo date == today's date
-
+        
+        let myTodoList = createTodo.todoList; 
         projects.lastProjectClicked.length = 0;
         let todayDate = formatTodayDate();
 
@@ -229,6 +231,7 @@ export const sideBarLinks = (() => {            //Module for handling sidebar fu
 
     function weekBtn() {
 
+        let myTodoList = createTodo.todoList; 
         projects.lastProjectClicked.length = 0;
         function weekFilter(object) { //use this function in to filter array
 
