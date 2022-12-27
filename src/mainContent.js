@@ -252,7 +252,7 @@ export const mainContent = (() => {     // this module handles everything relate
         if (lowPrio.checked == true) {                          
             myTodoCard.style.backgroundColor = 'rgb(0, 231, 39)';
         } else if (medPrio.checked == true) {
-            myTodoCard.style.backgroundColor = 'rgb(255, 255, 0)';
+            myTodoCard.style.backgroundColor = 'rgb(255, 165, 0)';
         } else {
             myTodoCard.style.backgroundColor = 'rgb(255, 0, 0)';
         }
