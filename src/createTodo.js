@@ -255,6 +255,7 @@ export const createTodo = (() => { // this module handles everything related to 
         mainContent.switchOverlay();
         inputContainerSwitch();
         clearForm();
+        saveTodoLocalStorage();
     }
 
     function createTodoObject () {
@@ -321,7 +322,16 @@ export const createTodo = (() => { // this module handles everything related to 
         mainContent.switchOverlay();
         inputContainerSwitch();
         switchForm();
-    } 
+    }
+    
+    function saveTodoLocalStorage() {           // Saves the todo list to local storage
+        localStorage.setItem('todoList', JSON.stringify(todoList));
+    }
 
-    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo}; // remove displayTodo after done setting CSS for todo cards
+    function retrieveTodoList() {               // Retrieves todo list from local storage
+        let retrievedTodos = JSON.parse(localStorage.getItem('todoList'));
+        return retrievedTodos;
+    }
+
+    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo, retrieveTodoList}; 
 })();
