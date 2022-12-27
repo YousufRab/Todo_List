@@ -396,11 +396,21 @@ export const mainContent = (() => {     // this module handles everything relate
 
     function checkBoxClicked() {                // Called when checkbox is clicked
         let todoTitle = this.nextElementSibling;
+
+        let myTodoId = getTodoCardID(this);
+        let myTodo = findTodo(myTodoId);
+        const todoIndex = createTodo.todoList.indexOf(myTodo);
+        
         if (this.checked) {
             todoTitle.style.textDecoration = 'line-through';
+            myTodo.completed = true;
+            createTodo.todoList[todoIndex] = myTodo;
         } else {
             todoTitle.style.textDecoration = "";
+            myTodo.completed = false;
+            createTodo.todoList[todoIndex] = myTodo;
         }
+        console.log(myTodo);
     }
 
     return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch, clearEditForm}
