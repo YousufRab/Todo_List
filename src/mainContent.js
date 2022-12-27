@@ -20,7 +20,9 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const completed = document.createElement('input');
         completed.setAttribute('type', 'checkbox');
+        completed.classList.add('completed');
         completed.checked = todo.completed;
+        completed.addEventListener('click', checkBoxClicked);
         
         const title = document.createElement('div');
         title.classList.add('todoTitle');
@@ -370,9 +372,7 @@ export const mainContent = (() => {     // this module handles everything relate
             overlay.classList.add('overlayHidden');
             overlay.classList.remove('overlayVisible');
         }
-
         // Add more code for hiding details, edit form and create todo/project forms
-
     }
 
     function targetTodoCard(element) {                 // this function will target and return the todo Card element depending on what element is clicked
@@ -391,6 +391,15 @@ export const mainContent = (() => {     // this module handles everything relate
             let myTodoCard = mainInfo.parentNode;
 
             return myTodoCard;
+        }
+    }
+
+    function checkBoxClicked() {                // Called when checkbox is clicked
+        let todoTitle = this.nextElementSibling;
+        if (this.checked) {
+            todoTitle.style.textDecoration = 'line-through';
+        } else {
+            todoTitle.style.textDecoration = "";
         }
     }
 
