@@ -40,8 +40,12 @@ export const mainContent = (() => {     // this module handles everything relate
 
         const dueDate = document.createElement('div');
         dueDate.classList.add('todoDate');
-        dueDate.innerHTML = dateToString(todo);
-
+        if (todo.date === "") {
+            dueDate.innerHTML = "";
+        } else {
+            dueDate.innerHTML = dateToString(todo);
+        }
+        
         const editDiv = document.createElement('div');
         editDiv.classList.add('editBtn');
         editDiv.classList.add('hvr-float');
