@@ -197,7 +197,7 @@ body {
     margin-top: 8px;
 }
 
-#closeInput, #closeDetails {
+#closeInput, #closeDetails, #editCancel {
     margin-right: 20px;
     border: 2px solid transparent;
     font-family: 'Roboto';
@@ -208,11 +208,11 @@ body {
     transition: 0.2s all ease-in-out;
 }
 
-#closeInput:hover, #closeDetails:hover {
+#closeInput:hover, #closeDetails:hover, #editCancel:hover {
     border: 2px solid black;
 }
 
-#closeInput:active, #closeDetails:active {
+#closeInput:active, #closeDetails:active, #editCancel:active {
     background-color: #c7ddcc;
 }
 
@@ -234,7 +234,7 @@ fieldset > div {
     font-size: 1.1rem;
 }
 
-#todoTitle, #todoDescription, #projectNameInput {
+#todoTitle, #todoDescription, #projectNameInput, #proName {
     width: 290px;
     border: none;
     border-radius: 8px;
@@ -472,8 +472,10 @@ input[type="checkbox"]:disabled {
 
  /* All Edit Container related CSS properties */
 #editContainer {
-    background-color: bisque;
+    background-color: #E3B448;
     position: absolute;
+    padding: 18px;
+    border-radius: 16px;
     min-width: 475px;
     width: 30vw;
     min-height: 220px;
@@ -487,12 +489,19 @@ input[type="checkbox"]:disabled {
     z-index: 3;
 }
 
+#proName {
+    margin-bottom: 10px;
+    width: 415px;
+}
+
 #proNameContainer {
     display: flex;
 }
 
 #editCancel {
-    margin-left: auto;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-bottom: 5px;
 }
 
 #bottomDivEdit {
