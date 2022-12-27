@@ -46,3 +46,13 @@ closeEdit.addEventListener('click', () => {
     mainContent.clearEditForm();
 });
 
+function initializePage() {
+    let myTodoList = createTodo.retrieveTodoList();
+    if (myTodoList.length > 0) {
+        createTodo.todoList = myTodoList;
+        myTodoList.forEach((todo) => createTodo.displayTodo(todo));
+    }
+    
+}
+
+window.onload = initializePage;
