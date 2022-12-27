@@ -240,6 +240,15 @@ export const createTodo = (() => { // this module handles everything related to 
     }
 
     function addTodoBtnClicked() {
+        if (document.getElementById('todoTitle').length === 0 ||
+            (document.getElementById('lowPrio').checked == false &&
+            document.getElementById('medPrio').checked == false &&
+            document.getElementById('highPrio').checked == false)) {
+
+                alert("Please give your task a title and select priority level");
+                return;
+            }
+
         const myTodo = createTodoObject();
         console.table(todoList);
         displayTodo(myTodo);
