@@ -409,8 +409,7 @@ export const mainContent = (() => {     // this module handles everything relate
             todoTitle.style.textDecoration = "";
             myTodo.completed = false;
             createTodo.todoList[todoIndex] = myTodo;
-        }
-        console.log(myTodo);
+        };
     }
 
     return {createToDoCard, confirmEditBtn, switchOverlay, showDetailsSwitch, editContainerSwitch, clearEditForm}
