@@ -330,7 +330,7 @@ input[type=radio] {
     text-align: center;
 }
 
-#addTodoBtn, #addProjectBtnForm, #addTodo-content {
+#addTodoBtn, #addProjectBtnForm, #addTodo-content, #conEditBtn {
     text-align: center;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -479,8 +479,8 @@ input[type="checkbox"]:disabled {
     min-width: 475px;
     width: 30vw;
     min-height: 220px;
-    height: 30vh;
-    top: 40%;
+    height: 35vh;
+    top: 30%;
     bottom: 40%;
     left: 35%;
     right: 40%;
@@ -531,14 +531,25 @@ input[type="checkbox"]:disabled {
 
 #bottomDivEdit {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#bottomEditDiv > div > div:nth-child(1) {
+    margin-bottom: 12px;
+}
+
+#addTodoBtnContainer-Form {
+    text-align: center;
 }
 
 #conEditBtn {
-    margin-right: 8px;
-    margin-top: 15px;
-    padding: 8px;
-    border: 1px solid green;
+    width: 125px;
+    margin-top: 12px;
+    margin-left: 170px;
+    margin-right: auto;
+    background-color: whitesmoke;
+    cursor: pointer;
 }
 
 #descriptionEdit {
