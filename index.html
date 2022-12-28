@@ -8,7 +8,56 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div class="overlay"></div>
+    <div id="overlay" class="overlayHidden"></div>
     <div id="homeContent"></div>
+    <div id="editContainer" class="editContainer-hidden">
+        <div id="proNameContainer">
+            <input type="text" id="proName">
+            <div id="editCancel" class="closePopup hvr-float">X</div>
+        </div>
+        <div>
+            <textarea id="descriptionEdit"></textarea>
+        </div>
+        <div>
+            <div>Due Date:</div>
+            <input type="date" id="editDate">
+        </div>
+        <div id="bottomDivEdit">
+            <div>
+                <div>Priority:</div>
+                <input type="radio" id="lowPrioEdit" name="editPriority">
+                <label for="lowPrioEdit">LOW</label>
+                <input type="radio" id="medPrioEdit" name="editPriority">
+                <label for="medPrioEdit">MEDIUM</label>
+                <input type="radio" id="highPrioEdit" name="editPriority">
+                <label for="highPrioEdit">HIGH</label>
+            </div>
+            <div>
+                <div id="conEditBtn" class="hvr-push">Confirm Edit</div>
+            </div>
+        </div>
+    </div>
+    <div id="detailsContainer" class="detailsHidden"> 
+        <div id="detailsTitle-container">
+            <div id="detailsTitle"></div>
+            <div id="closeDetails" class="closePopup hvr-float">X</div>
+        </div>
+        <div>
+            <div>Project: </div>
+            <div id="detailsProject"></div>
+        </div>
+        <div>
+            <div>Priority: </div>
+            <div id="detailsPriority"></div>
+        </div>
+        <div>
+            <div>Due Date:</div>
+            <div id="detailsDate"></div>
+        </div>
+        <div>
+            <div>Description: </div>
+            <div id="detailsDescription"></div>
+        </div>
+    </div>
 </body>
 </html>
