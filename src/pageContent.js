@@ -168,7 +168,7 @@ export const projects = (() => {    //Module for handling projects in sidebar
     projectList.push(project);  
     }
 
-    return {render, addToProList, createProject, projectList, lastProjectClicked};
+    return {render, addToProList, createProject, projectList, projectNum, renderedProjects, lastProjectClicked};
 })();
 
 
