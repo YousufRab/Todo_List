@@ -50,9 +50,12 @@ function initializePage() {
     let myTodoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
     console.log(myTodoList);
     createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
+    console.log("todoNum is " + createTodo.todoNum);
     console.log(projects.projectList);
+    let myProjectList = createTodo.retrieveItemsFromStorage().retrievedProList;
+    console.log(myProjectList);
     projects.projectList = createTodo.retrieveItemsFromStorage().retrievedProList;
-    console.log(projects.projectList);
+    console.log(myProjectList);
     projects.projectNum = Number(createTodo.retrieveItemsFromStorage().retrievedProNum);
     
     createTodo.todoList = myTodoList;
