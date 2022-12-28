@@ -47,12 +47,23 @@ closeEdit.addEventListener('click', () => {
 });
 
 function initializePage() {
-    let myTodoList = createTodo.retrieveTodoList();
-    if (myTodoList.length > 0) {
-        createTodo.todoList = myTodoList;
-        myTodoList.forEach((todo) => createTodo.displayTodo(todo));
-    }
+    let myTodoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
+    console.log(myTodoList);
+    createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
+    console.log(projects.projectList);
+    projects.projectList = createTodo.retrieveItemsFromStorage().retrievedProList;
+    console.log(projects.projectList);
+    projects.projectNum = Number(createTodo.retrieveItemsFromStorage().retrievedProNum);
     
+    createTodo.todoList = myTodoList;
+    myTodoList.forEach((todo) => createTodo.displayTodo(todo));
+    let renderedPros = createTodo.retrieveItemsFromStorage().retrievedRenderedPro;
+
+    if (renderedPros.length > 0) {
+        projects.renderedProjects = renderedPros;
+        projects.renderedProjects.forEach((project) => projects.render(project));
+    }
 }
 
 window.onload = initializePage;
+window.addEventListener('beforeunload', createTodo.saveToLocalStorage);
