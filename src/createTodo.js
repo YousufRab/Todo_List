@@ -250,12 +250,12 @@ export const createTodo = (() => { // this module handles everything related to 
             }
 
         const myTodo = createTodoObject();
-        console.table(todoList);
         displayTodo(myTodo);
         mainContent.switchOverlay();
         inputContainerSwitch();
         clearForm();
         saveToLocalStorage();
+        console.table(todoList);
     }
 
     function createTodoObject () {
@@ -329,6 +329,7 @@ export const createTodo = (() => { // this module handles everything related to 
         localStorage.setItem('todoNum', todoNum);
         localStorage.setItem('projectList', JSON.stringify(projects.projectList));
         localStorage.setItem('projectNum', projects.projectNum);
+        localStorage.setItem('renderedProjects', JSON.stringify(projects.renderedProjects));
     }
 
     function retrieveItemsFromStorage() {               // Retrieves todo list from local storage
@@ -336,8 +337,9 @@ export const createTodo = (() => { // this module handles everything related to 
         let retrievedTodoNum = localStorage.getItem('todoNum');
         let retrievedProList = JSON.parse(localStorage.getItem('projectList'));
         let retrievedProNum = localStorage.getItem('projectNum');
-        return {retrievedTodos, retrievedTodoNum, retrievedProList, retrievedProNum};
+        let retrievedRenderedPro = JSON.parse(localStorage.getItem('renderedProjects'));
+        return {retrievedTodos, retrievedTodoNum, retrievedProList, retrievedProNum, retrievedRenderedPro};
     }
 
-    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo, retrieveItemsFromStorage}; 
+    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo, saveToLocalStorage, retrieveItemsFromStorage, todoNum}; 
 })();
