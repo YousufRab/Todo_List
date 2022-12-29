@@ -48,25 +48,37 @@ closeEdit.addEventListener('click', () => {
 
 function initializePage() {
     let myTodoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
-    console.log(myTodoList);
     createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
-    console.log("todoNum is " + createTodo.todoNum);
-    console.log(projects.projectList);
+    console.log(createTodo.todoNum);
+    console.log(createTodo.todoList);
+    createTodo.todoList = myTodoList;
+    console.log(createTodo.todoList);
+    if (myTodoList !=null && myTodoList.length > 0) {
+        myTodoList.forEach((todo) => createTodo.displayTodo(todo));
+    }
+
+    projects.projectNum = Number(createTodo.retrieveItemsFromStorage().retrievedProNum);
     let myProjectList = createTodo.retrieveItemsFromStorage().retrievedProList;
     console.log(myProjectList);
-    projects.projectList = createTodo.retrieveItemsFromStorage().retrievedProList;
-    console.log(myProjectList);
-    projects.projectNum = Number(createTodo.retrieveItemsFromStorage().retrievedProNum);
-    
-    createTodo.todoList = myTodoList;
-    myTodoList.forEach((todo) => createTodo.displayTodo(todo));
+    if (myProjectList != null && myProjectList.length > 0) {
+        projects.projectList = createTodo.retrieveItemsFromStorage().retrievedProList;
+    }
+   
     let renderedPros = createTodo.retrieveItemsFromStorage().retrievedRenderedPro;
 
-    if (renderedPros.length > 0) {
+    if (renderedPros != null && renderedPros.length > 0) {
         projects.renderedProjects = renderedPros;
         projects.renderedProjects.forEach((project) => projects.render(project));
     }
 }
 
 window.onload = initializePage;
-window.addEventListener('beforeunload', createTodo.saveToLocalStorage);
+window.addEventListener('beforeunload', () => {
+    
+    createTodo.saveTodoLocalStorage();
+    createTodo.saveProLocalStorage();
+});
+    
+    
+    
+    
