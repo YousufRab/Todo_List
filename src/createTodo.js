@@ -254,7 +254,6 @@ export const createTodo = (() => { // this module handles everything related to 
         mainContent.switchOverlay();
         inputContainerSwitch();
         clearForm();
-        saveTodoLocalStorage();
         console.table(todoList);
     }
 
@@ -313,15 +312,14 @@ export const createTodo = (() => { // this module handles everything related to 
     }
 
     function createProjectBtnClicked() {
-
+        
         const newProject = collectProjectFormInput(); 
         
         const newProjectObject = projects.createProject(newProject);
         
         projects.addToProList(newProjectObject);
-        
         projects.render();
-
+        
         saveProLocalStorage();
         
         document.querySelector('#projectNameInput').value = '';    // clear input
@@ -337,15 +335,12 @@ export const createTodo = (() => { // this module handles everything related to 
         localStorage.setItem('projectList', JSON.stringify(projectList));
         localStorage.setItem('projectNum', projectNum);
         localStorage.setItem('renderedProjects', JSON.stringify(renderedPro));
-
     }
     
     function saveTodoLocalStorage() {           // Saves the todo list and to do num
-        localStorage.setItem('todoList', JSON.stringify(todoList));
+        let myTodoList = todoList;
+        localStorage.setItem('todoList', JSON.stringify(myTodoList));
         localStorage.setItem('todoNum', todoNum);
-        // localStorage.setItem('projectList', JSON.stringify(projects.projectList));
-        // localStorage.setItem('projectNum', projects.projectNum);
-        // localStorage.setItem('renderedProjects', JSON.stringify(projects.renderedProjects));
     }
 
     function retrieveItemsFromStorage() {               // Retrieves todo list from local storage
@@ -357,5 +352,5 @@ export const createTodo = (() => { // this module handles everything related to 
         return {retrievedTodos, retrievedTodoNum, retrievedProList, retrievedProNum, retrievedRenderedPro};
     }
 
-    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo, saveTodoLocalStorage, retrieveItemsFromStorage, todoNum}; 
+    return {todoForm, collectFormInput, todoList, Todo, inputContainerSwitch, switchForm, displayTodo, saveTodoLocalStorage, saveProLocalStorage, retrieveItemsFromStorage, todoNum}; 
 })();
