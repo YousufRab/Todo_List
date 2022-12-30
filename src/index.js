@@ -51,7 +51,8 @@ function initializePage() {
     createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
     console.log(createTodo.todoNum);
     console.log(createTodo.todoList);
-    createTodo.todoList = myTodoList;
+    // createTodo.todoList = myTodoList;
+    createTodo.todoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
     console.log(createTodo.todoList);
     if (myTodoList !=null && myTodoList.length > 0) {
         myTodoList.forEach((todo) => createTodo.displayTodo(todo));
@@ -67,6 +68,7 @@ function initializePage() {
     let renderedPros = createTodo.retrieveItemsFromStorage().retrievedRenderedPro;
 
     if (renderedPros != null && renderedPros.length > 0) {
+        console.log(projects.renderedProjects);
         projects.renderedProjects = renderedPros;
         projects.renderedProjects.forEach((project) => projects.render(project));
     }
