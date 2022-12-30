@@ -48,11 +48,13 @@ closeEdit.addEventListener('click', () => {
 
 function initializePage() {
     let myTodoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
-    createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
-    console.log(createTodo.todoNum);
-    console.log(createTodo.todoList);
-    // createTodo.todoList = myTodoList;
+    myTodoList.forEach(todo => createTodo.todoList.push(todo));
     createTodo.todoList = createTodo.retrieveItemsFromStorage().retrievedTodos;
+        
+    createTodo.todoNum = Number(createTodo.retrieveItemsFromStorage().retrievedTodoNum);
+    console.log(createTodo.todoNum);   
+
+
     console.log(createTodo.todoList);
     if (myTodoList !=null && myTodoList.length > 0) {
         myTodoList.forEach((todo) => createTodo.displayTodo(todo));
